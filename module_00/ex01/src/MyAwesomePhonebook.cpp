@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   MyAwesomePhonebook.cpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brmoretti <brmoretti@student.42.fr>        +#+  +:+       +#+        */
+/*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/13 18:06:51 by brmoretti         #+#    #+#             */
-/*   Updated: 2024/03/13 18:14:13 by brmoretti        ###   ########.fr       */
+/*   Created: 2024/03/29 17:52:51 by bmoretti          #+#    #+#             */
+/*   Updated: 2024/04/01 20:25:44 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
-class PhoneBook {
-	
-};
-
-#endif
+int	main(void) {
+	PhoneBook	phone_book;
+	return 0;
+}

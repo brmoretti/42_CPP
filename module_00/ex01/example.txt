@@ -1,0 +1,65 @@
+ADD
+Angelina
+Jolie
+Angie
++1 555-1234
+Once secretly tried to adopt a penguin.
+ADD
+Leonardo
+DiCaprio
+Leo
++1 555-5678
+Is afraid of butterflies.
+ADD
+Oprah
+Winfrey
+Oprah
++1 555-9012
+Keeps a secret stash of chocolate under her desk.
+ADD
+Beyonce
+Knowles
+Queen Bey
++1 555-3456
+Has a collection of socks with celebrity faces on them.
+ADD
+Tom
+Hanks
+Hanksy
++1 555-7890
+Once accidentally photobombed a wedding.
+ADD
+Emma
+Watson
+Em
++1 555-2345
+Is secretly a master at solving Rubik's cubes.
+ADD
+Will
+Smith
+Fresh Prince
++1 555-6789
+Has a fear of birds, particularly pigeons.
+ADD
+Serena
+Williams
+Serena
++1 555-4321
+Once got lost in her own house for an hour.
+ADD
+Jackie
+Chan
+Jackie
++1 555-7777
+Once accidentally dyed his hair pink before a movie premiere.
+ADD
+Cristiano
+Ronaldo
+CR7
++1 555-1111
+Secretly owns a vast collection of Spice Girls memorabilia.
+SEARCH
+1
+SEARCH
+6
+EXIT

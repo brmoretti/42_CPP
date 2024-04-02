@@ -1,8 +1,13 @@
-NAME		=	PhoneBook
-SRCS		=	
-INCLUDES	=	PhoneBook.hpp
+NAME		=	MyAwesomePhoneBook
+SRCS		=	$(wildcard src/*.cpp)
+INCLUDE_FLS	=	$(wildcard src/*.hpp)
+INCLUDES	=	-Isrc
 CC			=	g++
-FLAGS		=	-Wall -Wextra -Werror -std=c++98
+FLAGS		=	-Wall		\
+				-Wextra		\
+				-Werror		\
+				-std=c++98	\
+				-pedantic
 VALGRIND	=	valgrind 				\
 				-q						\
 				--leak-check=full		\
@@ -12,8 +17,8 @@ VALGRIND	=	valgrind 				\
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
-	$(CC) $(FLAGS) -o $(NAME) $(SRCS)
+$(NAME): $(SRCS) $(INCLUDE_FLS)
+	$(CC) $(FLAGS) $(INCLUDES) $(SRCS) -o $(NAME)
 
 fclean:
 	@ rm -rf $(NAME)
