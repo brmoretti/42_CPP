@@ -1,8 +1,8 @@
-NAME		=	MyAwesomePhoneBook
+NAME		=	TheJobOfYourDreams
 SRCS		=	$(wildcard src/*.cpp)
 INCLUDE_FLS	=	$(wildcard src/*.hpp)
 INCLUDES	=	-Isrc
-CC			=	g++
+CC			=	c++
 FLAGS		=	-Wall		\
 				-Wextra		\
 				-Werror		\
