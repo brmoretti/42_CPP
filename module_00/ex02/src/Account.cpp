@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 23:41:48 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/02 18:08:31 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/03 12:55:18 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,6 @@ bool	Account::makeWithdrawal( int withdrawal ) {
 	this->_totalAmount -= withdrawal;
 	this->_totalNbWithdrawals++;
 	std::cout << "amount:" << this->_amount << ";";
-	std::cout << "nb_deposits:" << this->_nbWithdrawals << std::endl;
+	std::cout << "nb_withdrawals:" << this->_nbWithdrawals << std::endl;
 	return true;
 }
