@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 17:27:57 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/02 14:19:34 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/04 19:11:41 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include <string>
 
-typedef enum	e_property {
+typedef enum	e_property
+{
 	FIRST_NAME,
 	LAST_NAME,
 	NICKNAME,
@@ -23,15 +24,16 @@ typedef enum	e_property {
 	DARK_SECRET
 }	contact_prop;
 
-class Contact {
+class Contact
+{
 
 public:
-	Contact(void);
-	~Contact(void);
+	Contact( void );
+	~Contact( void );
 
-	std::string	get_property(contact_prop property) const;
-	bool		set_property(std::string str, contact_prop property);
-	void		print_contact_info(void) const;
+	std::string	get_property( contact_prop property ) const;
+	bool		set_property( std::string str, contact_prop property );
+	void		print_contact_info( void ) const;
 
 private:
 	std::string	_first_name;
@@ -40,7 +42,7 @@ private:
 	std::string	_phone_number;
 	std::string	_darkest_secret;
 
-	bool		_valid_phone_number(std::string phone_number) const;
+	bool		_valid_phone_number( std::string phone_number ) const;
 };
 
 #endif

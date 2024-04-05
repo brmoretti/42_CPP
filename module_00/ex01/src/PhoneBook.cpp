@@ -6,7 +6,7 @@
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:50:10 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/01 20:51:15 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/05 00:24:30 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,18 @@
 #include <iomanip>
 #include <sstream>
 
-PhoneBook::PhoneBook(void) {
+PhoneBook::PhoneBook( void )
+{
 	this->_n_contacts = 0;
 	this->_prompt();
 }
 
-PhoneBook::~PhoneBook(void) {
-	
+PhoneBook::~PhoneBook( void )
+{	
 }
 
-void	PhoneBook::_prompt(void) {
+void	PhoneBook::_prompt( void )
+{
 	std::string			buffer;
 	
 	std::cout << "Welcome to My Awesome Phonebook!\n" << std::endl;
@@ -53,7 +55,8 @@ void	PhoneBook::_prompt(void) {
 	}
 }
 
-void	PhoneBook::_add(unsigned short int index) {
+void	PhoneBook::_add( unsigned short int index )
+{
 	std::string	buffer;
 	bool		b = false;
 
@@ -95,7 +98,8 @@ void	PhoneBook::_add(unsigned short int index) {
 		this->_n_contacts++;
 }
 
-void	PhoneBook::_search(void) const {
+void	PhoneBook::_search( void ) const
+{
 	if (this->_n_contacts == 0) {
 		std::cout << "Phone book is still empty" << std::endl;
 		return;
@@ -114,7 +118,8 @@ void	PhoneBook::_search(void) const {
 	this->_contacts[buffer_int].print_contact_info();
 }
 
-void	PhoneBook::_print_phone_book(void) const {
+void	PhoneBook::_print_phone_book( void ) const
+{
 	std::cout << "Index     |First Name|Last Name |Nickname  |" << std::endl;
 	std::stringstream ss;
 	short int i = -1;
@@ -130,7 +135,8 @@ void	PhoneBook::_print_phone_book(void) const {
 	}
 }
 
-void	PhoneBook::_print_phone_book_field(const std::string str) const {
+void	PhoneBook::_print_phone_book_field( const std::string str ) const
+{
 	std::string	to_print;
 
 	if (str.length() > 10)

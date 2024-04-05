@@ -6,22 +6,23 @@
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:47:58 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/01 23:53:16 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/04 19:11:14 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include <iostream>
 
-Contact::Contact(void) {
-	
+Contact::Contact( void )
+{	
 }
 
-Contact::~Contact(void) {
-	
+Contact::~Contact( void )
+{	
 }
 
-std::string	Contact::get_property(contact_prop property) const {
+std::string	Contact::get_property( contact_prop property ) const
+{
 	switch (property) {
 	case FIRST_NAME:
 		return this->_first_name;
@@ -39,7 +40,8 @@ std::string	Contact::get_property(contact_prop property) const {
 	}
 }
 
-bool		Contact::set_property(std::string str, contact_prop property) {
+bool		Contact::set_property( std::string str, contact_prop property )
+{
 	if (str.length() == 0) {
 		std::cerr << "❌ Empty field not allowed" << std::endl;
 		return false;
@@ -69,7 +71,8 @@ bool		Contact::set_property(std::string str, contact_prop property) {
 	}
 }
 
-bool		Contact::_valid_phone_number(std::string phone_number) const {
+bool		Contact::_valid_phone_number( std::string phone_number ) const
+{
 	for (std::string::size_type i = 0; i < phone_number.length(); i++) {
 		char c = phone_number[i];
 		if (!isdigit(c) && c != '(' && c != ')' && c != '-' && c != '+' && c != ' ') {
@@ -84,7 +87,8 @@ bool		Contact::_valid_phone_number(std::string phone_number) const {
 	return true;
 }
 
-void	Contact::print_contact_info(void) const {
+void	Contact::print_contact_info( void ) const
+{
 	std::cout << "First name:\t" << this->_first_name << "\n";
 	std::cout << "Last name:\t" << this->_last_name << "\n";
 	std::cout << "Nickame:\t" << this->_nickname << "\n";

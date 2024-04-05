@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/13 18:06:51 by brmoretti         #+#    #+#             */
-/*   Updated: 2024/04/05 00:27:57 by bmoretti         ###   ########.fr       */
+/*   Created: 2024/04/04 18:55:19 by bmoretti          #+#    #+#             */
+/*   Updated: 2024/04/04 19:16:03 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-# include "Contact.hpp"
+# include <string>
 
-class PhoneBook
+class Zombie
 {
-
-public:
-	PhoneBook(void);
-	~PhoneBook(void);
-
 private:
-	Contact				_contacts[8];
-	unsigned short int	_n_contacts;
-
-	void				_prompt(void);
-	void				_add(unsigned short int index);
-	void				_search(void) const;
-	void				_print_phone_book(void) const;
-	void				_print_phone_book_field(const std::string str) const;
+	std::string	name;
+	void		announce( void );
+public:
+	Zombie(/* args */);
+	~Zombie();
 };
 
 #endif
