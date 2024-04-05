@@ -6,7 +6,7 @@
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:50:10 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/05 10:22:44 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/05 11:02:58 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,16 +53,16 @@ void	PhoneBook::_prompt( void )
 
 void	PhoneBook::_add( unsigned short int index )
 {
-	this->_add_attribute(index, "First name:", FIRST_NAME);
-	this->_add_attribute(index, "Last name:", LAST_NAME);
-	this->_add_attribute(index, "Nickname:", NICKNAME);
-	this->_add_attribute(index, "Phone number:", PHONE_NUMBER);
-	this->_add_attribute(index, "🤫 Darkest secret:", DARK_SECRET);
+	this->_addAttribute(index, "First name:", FIRST_NAME);
+	this->_addAttribute(index, "Last name:", LAST_NAME);
+	this->_addAttribute(index, "Nickname:", NICKNAME);
+	this->_addAttribute(index, "Phone number:", PHONE_NUMBER);
+	this->_addAttribute(index, "🤫 Darkest secret:", DARK_SECRET);
 	if (this->_n_contacts < 8)
 		this->_n_contacts++;
 }
 
-void	PhoneBook::_add_attribute( unsigned short int index, 
+void	PhoneBook::_addAttribute( unsigned short int index, 
 					std::string text, contact_prop prop )
 {
 	std::string	buffer;
@@ -81,7 +81,7 @@ void	PhoneBook::_search( void ) const
 		std::cout << "Phone book is still empty" << std::endl;
 		return;
 	}
-	this->_print_phone_book();
+	this->_printPhoneBook();
 	std::string	buffer;
 	std::cout << "Choose one contact:" << std::endl;
 	std::getline(std::cin, buffer);
@@ -95,24 +95,24 @@ void	PhoneBook::_search( void ) const
 	this->_contacts[buffer_int].print_contact_info();
 }
 
-void	PhoneBook::_print_phone_book( void ) const
+void	PhoneBook::_printPhoneBook( void ) const
 {
 	std::cout << "Index     |First Name|Last Name |Nickname  |" << std::endl;
 	std::stringstream ss;
 	short int i = -1;
 	while (++i < this->_n_contacts) {
 		ss << i;
-		this->_print_phone_book_field(ss.str());
+		this->_printPhoneBookField(ss.str());
 		ss.str("");
 		ss.clear();
-		this->_print_phone_book_field(this->_contacts[i].get_property(FIRST_NAME));
-		this->_print_phone_book_field(this->_contacts[i].get_property(LAST_NAME));
-		this->_print_phone_book_field(this->_contacts[i].get_property(NICKNAME));
+		this->_printPhoneBookField(this->_contacts[i].get_property(FIRST_NAME));
+		this->_printPhoneBookField(this->_contacts[i].get_property(LAST_NAME));
+		this->_printPhoneBookField(this->_contacts[i].get_property(NICKNAME));
 		std::cout << std::endl;
 	}
 }
 
-void	PhoneBook::_print_phone_book_field( const std::string str ) const
+void	PhoneBook::_printPhoneBookField( const std::string str ) const
 {
 	std::string	to_print;
 

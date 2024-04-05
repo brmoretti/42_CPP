@@ -6,7 +6,7 @@
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:47:58 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/05 10:19:17 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/05 11:05:20 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Contact::~Contact( void )
 {	
 }
 
-std::string	Contact::get_property( contact_prop property ) const
+std::string	Contact::getProperty( contact_prop property ) const
 {
 	switch (property) {
 	case FIRST_NAME:
@@ -39,7 +39,7 @@ std::string	Contact::get_property( contact_prop property ) const
 	}
 }
 
-bool		Contact::set_property( std::string str, contact_prop property )
+bool		Contact::setProperty( std::string str, contact_prop property )
 {
 	if (str.length() == 0) {
 		std::cerr << "❌ Empty field not allowed" << std::endl;
@@ -56,7 +56,7 @@ bool		Contact::set_property( std::string str, contact_prop property )
 		this->_nickname = str;
 		return true;
 	case PHONE_NUMBER:
-		if (Contact::_valid_phone_number(str)) {
+		if (Contact::_validPhoneNumber(str)) {
 			this->_phone_number = str;
 			return true;
 		} else
@@ -70,7 +70,7 @@ bool		Contact::set_property( std::string str, contact_prop property )
 	}
 }
 
-bool		Contact::_valid_phone_number( std::string phone_number ) const
+bool		Contact::_validPhoneNumber( std::string phone_number ) const
 {
 	for (std::string::size_type i = 0; i < phone_number.length(); i++) {
 		char c = phone_number[i];
@@ -86,7 +86,7 @@ bool		Contact::_valid_phone_number( std::string phone_number ) const
 	return true;
 }
 
-void	Contact::print_contact_info( void ) const
+void	Contact::printContactInfo( void ) const
 {
 	std::cout << "First name:\t" << this->_first_name << "\n";
 	std::cout << "Last name:\t" << this->_last_name << "\n";
