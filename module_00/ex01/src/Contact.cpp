@@ -6,12 +6,11 @@
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:47:58 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/04 19:11:14 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/05 10:19:17 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include <iostream>
 
 Contact::Contact( void )
 {	

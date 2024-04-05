@@ -6,7 +6,7 @@
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 17:27:57 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/04 19:11:41 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/05 10:19:11 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CONTACT_HPP
 
 # include <string>
+# include <iostream>
 
 typedef enum	e_property
 {

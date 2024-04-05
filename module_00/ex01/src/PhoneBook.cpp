@@ -6,15 +6,11 @@
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:50:10 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/05 00:24:30 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/05 10:22:44 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include <iostream>
-#include <string>
-#include <iomanip>
-#include <sstream>
 
 PhoneBook::PhoneBook( void )
 {
@@ -57,45 +53,26 @@ void	PhoneBook::_prompt( void )
 
 void	PhoneBook::_add( unsigned short int index )
 {
-	std::string	buffer;
-	bool		b = false;
-
-	while (!b) {
-		std::cout << "First name:" << std::endl;
-		std::getline(std::cin, buffer);
-		b = PhoneBook::_contacts[index].set_property(buffer, FIRST_NAME);
-	}
-
-	b = false;
-	while (!b) {
-		std::cout << "Last name:" << std::endl;
-		std::getline(std::cin, buffer);
-		b = PhoneBook::_contacts[index].set_property(buffer, LAST_NAME);
-	}
-
-	b = false;
-	while (!b) {
-		std::cout << "Nickname:" << std::endl;
-		std::getline(std::cin, buffer);
-		b = PhoneBook::_contacts[index].set_property(buffer, NICKNAME);
-	}
-
-	b = false;
-	while (!b) {
-		std::cout << "Phone number:" << std::endl;
-		std::getline(std::cin, buffer);
-		b = PhoneBook::_contacts[index].set_property(buffer, PHONE_NUMBER);
-	}
-
-	b = false;
-	while (!b) {
-		std::cout << "🤫 Darkest secret:" << std::endl;
-		std::getline(std::cin, buffer);
-		b = PhoneBook::_contacts[index].set_property(buffer, DARK_SECRET);
-	}
-	
+	this->_add_attribute(index, "First name:", FIRST_NAME);
+	this->_add_attribute(index, "Last name:", LAST_NAME);
+	this->_add_attribute(index, "Nickname:", NICKNAME);
+	this->_add_attribute(index, "Phone number:", PHONE_NUMBER);
+	this->_add_attribute(index, "🤫 Darkest secret:", DARK_SECRET);
 	if (this->_n_contacts < 8)
 		this->_n_contacts++;
+}
+
+void	PhoneBook::_add_attribute( unsigned short int index, 
+					std::string text, contact_prop prop )
+{
+	std::string	buffer;
+	bool		b = false;
+	
+	while (!b) {
+		std::cout << text << std::endl;
+		std::getline(std::cin, buffer);
+		b = PhoneBook::_contacts[index].set_property(buffer, prop);
+	}
 }
 
 void	PhoneBook::_search( void ) const
