@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 18:55:19 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/05 18:20:58 by bmoretti         ###   ########.fr       */
+/*   Created: 2024/04/05 15:35:06 by bmoretti          #+#    #+#             */
+/*   Updated: 2024/04/05 18:18:36 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "HumanA.hpp"
 
-# include <string>
-# include <iostream>
-
-class Zombie
+HumanA::HumanA( std::string name, Weapon& weapon )
+			: _name(name), _weapon(weapon)
 {
-private:
-	std::string	_name;
+}
+HumanA::~HumanA( void )
+{
+}
 
-public:
-	Zombie( std::string name );
-	~Zombie();
-
-	void		announce( void );
-
-};
-
-#endif
+void	HumanA::attack( void ) const
+{
+	std::cout << "\033[1;32m" << this->_name << "\033[0m";
+	std::cout << " attacks with their ";
+	std::cout << "\033[1;35m" << this->_weapon.getType() << "\033[0m";
+	std::cout << std::endl;
+}

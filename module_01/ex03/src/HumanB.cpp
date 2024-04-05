@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 18:56:58 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/05 18:46:39 by bmoretti         ###   ########.fr       */
+/*   Created: 2024/04/05 15:36:13 by bmoretti          #+#    #+#             */
+/*   Updated: 2024/04/05 18:11:13 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanB.hpp"
 
-Zombie::Zombie( void )
+HumanB::HumanB( std::string name ) : _name(name)
+{
+	this->_weapon = NULL;
+}
+
+HumanB::~HumanB( void )
 {
 }
 
-Zombie::Zombie( std::string name ) : _name(name)
-{
-}
-
-Zombie::~Zombie()
-{
-	std::cout << "\033[1;31m" << this->_name << "\033[0m";
-	std::cout << ": Not in my braiiiiiiinnnzzz plan!" << std::endl;
-}
-
-void		Zombie::announce( void ) const
+void	HumanB::attack( void ) const
 {
 	std::cout << "\033[1;32m" << this->_name << "\033[0m";
-	std::cout << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << " attacks with their ";
+	if (this->_weapon == NULL)
+		std::cout << "\033[1;35m" << "bare hands" << "\033[0m";
+	else
+		std::cout << "\033[1;35m" << this->_weapon->getType() << "\033[0m";
+	std::cout << std::endl;
 }
 
-void		Zombie::setName( std::string name )
+void	HumanB::setWeapon( Weapon& weapon )
 {
-	this->_name = name;
+	this->_weapon = &weapon;
 }

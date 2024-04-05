@@ -6,7 +6,7 @@
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 18:55:19 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/05 10:56:55 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/05 18:27:05 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Zombie
 {
 private:
-	std::string	name;
+	std::string	_name;
 
 public:
 	Zombie();
