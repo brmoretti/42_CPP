@@ -5,30 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 15:32:19 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/05 18:50:17 by bmoretti         ###   ########.fr       */
+/*   Created: 2024/04/05 18:58:14 by bmoretti          #+#    #+#             */
+/*   Updated: 2024/04/06 14:09:01 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "SedIsForLosers.hpp"
 
-int	main( void )
+int	main( int argc, char *argv[] )
 {
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
+	if (argc != 4) {
+		std::cerr << "Usage: ./SedIsForLosers <filename> <s1> <s2>"
+			<< std::endl;
+		return 1;
 	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
+	NewSed	new_sed(argv[1], argv[2], argv[3]);
 	return 0;
 }

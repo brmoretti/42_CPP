@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   NewSed.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 15:32:19 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/05 18:50:17 by bmoretti         ###   ########.fr       */
+/*   Created: 2024/04/06 01:44:05 by bmoretti          #+#    #+#             */
+/*   Updated: 2024/04/06 14:01:33 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#ifndef NEWSED_HPP
+# define NEWSED_HPP
 
-int	main( void )
+# include "SedIsForLosers.hpp"
+
+class NewSed
 {
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-	return 0;
-}
+private:
+	std::fstream	_input;
+	std::fstream	_output;
+	void			_replacing( const std::string& s1, const std::string& s2 );
+
+public:
+	NewSed( const std::string& input_file, const std::string& s1,
+		 const std::string& s2 );
+	~NewSed( void );
+};
+
+#endif
