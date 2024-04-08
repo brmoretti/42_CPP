@@ -6,7 +6,7 @@
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:50:10 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/05 11:02:58 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/07 23:35:22 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	PhoneBook::_addAttribute( unsigned short int index,
 	while (!b) {
 		std::cout << text << std::endl;
 		std::getline(std::cin, buffer);
-		b = PhoneBook::_contacts[index].set_property(buffer, prop);
+		b = PhoneBook::_contacts[index].setProperty(buffer, prop);
 	}
 }
 
@@ -92,7 +92,7 @@ void	PhoneBook::_search( void ) const
 		std::cerr << "❌ Invalid index" << std::endl;
 		return ;
 	}
-	this->_contacts[buffer_int].print_contact_info();
+	this->_contacts[buffer_int].printContactInfo();
 }
 
 void	PhoneBook::_printPhoneBook( void ) const
@@ -105,9 +105,9 @@ void	PhoneBook::_printPhoneBook( void ) const
 		this->_printPhoneBookField(ss.str());
 		ss.str("");
 		ss.clear();
-		this->_printPhoneBookField(this->_contacts[i].get_property(FIRST_NAME));
-		this->_printPhoneBookField(this->_contacts[i].get_property(LAST_NAME));
-		this->_printPhoneBookField(this->_contacts[i].get_property(NICKNAME));
+		this->_printPhoneBookField(this->_contacts[i].getProperty(FIRST_NAME));
+		this->_printPhoneBookField(this->_contacts[i].getProperty(LAST_NAME));
+		this->_printPhoneBookField(this->_contacts[i].getProperty(NICKNAME));
 		std::cout << std::endl;
 	}
 }
