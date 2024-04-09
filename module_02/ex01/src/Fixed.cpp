@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:19:42 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/09 04:16:57 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/09 07:00:55 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,15 @@ Fixed::Fixed() : _fixed(0)
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed( const int number )
+Fixed::Fixed( const int number ) : _fixed( number << this->_fractional )
 {
-	
+	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed( const float number )
+	: _fixed( roundf(number * (1 << this->_fractional)) )
 {
-	
+	std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::~Fixed()
@@ -46,29 +47,30 @@ Fixed&	Fixed::operator=( Fixed const & rhs )
 	return *this;
 }
 
-std::ostream	Fixed::operator<<( std::ostream const & _cout )
-{
-	
-}
 
 int		Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return this->_fixed;
 }
 
 void	Fixed::setRawBits( int const raw )
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	this->_fixed = raw;
 }
 
 float	Fixed::toFloat( void ) const
 {
-	
+	return static_cast<float>(this->getRawBits())
+		/ ( 1 << this->_fractional );
 }
 
 int		Fixed::toInt( void ) const
 {
-	
+	return this->_fixed >> this->_fractional;
+}
+
+std::ostream&	operator<<( std::ostream & _cout, Fixed const & fixed)
+{
+	_cout << fixed.toFloat();
+	return _cout;
 }

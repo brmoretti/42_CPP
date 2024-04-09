@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:00:36 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/09 04:13:27 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/09 06:55:52 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
+
 class Fixed
 {
 private:
@@ -28,13 +30,13 @@ public:
 	Fixed( Fixed const & src );
 	Fixed&	operator=( Fixed const & rhs );
 
-	std::ostream	operator<<( std::ostream const & _cout );
-
 	int		getRawBits( void ) const;
 	void	setRawBits( int const raw );
 	float	toFloat( void ) const;
 	int		toInt( void ) const;
 };
+
+std::ostream&	operator<<( std::ostream & _cout, Fixed const & fixed);
 
 #endif
 

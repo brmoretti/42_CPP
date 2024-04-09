@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:19:42 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/09 03:54:34 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/09 06:59:15 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ int		Fixed::getRawBits( void ) const
 
 void	Fixed::setRawBits( int const raw )
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	std::cout << "setRawBits member function called" << std::endl;
 	this->_fixed = raw;
 }
