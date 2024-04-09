@@ -14,7 +14,11 @@ VALGRIND	=	valgrind 				\
 				--show-leak-kinds=all	\
 				--trace-children=no		\
 				--track-fds=no
+<<<<<<< HEAD
 ARGS		=
+=======
+ARGS		=	
+>>>>>>> 8f87bec9ecd8adb0da63612b9b8a0538a1175c45
 
 all: $(NAME)
 
