@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:19:42 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/09 07:00:55 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/09 07:13:19 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ Fixed&	Fixed::operator=( Fixed const & rhs )
 		this->_fixed = rhs.getRawBits();
 	return *this;
 }
-
 
 int		Fixed::getRawBits( void ) const
 {
