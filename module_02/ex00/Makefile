@@ -1,8 +1,7 @@
-NAME		=	SedIsForLosers
+NAME		=	harlFilter
 SRCS		=	$(wildcard src/*.cpp)
-INCLUDE_FLS	=	$(wildcard src/*.hpp)		\
-				$(wildcard include/*.hpp)
-INCLUDES	=	-Isrc -Iinclude
+INCLUDE_FLS	=	$(wildcard src/*.hpp)
+INCLUDES	=	-Isrc
 CC			=	c++
 FLAGS		=	-Wall		\
 				-Wextra		\
@@ -15,7 +14,7 @@ VALGRIND	=	valgrind 				\
 				--show-leak-kinds=all	\
 				--trace-children=no		\
 				--track-fds=no
-ARGS		=	Makefile IsForLosers IsForEveryone
+ARGS		=
 
 all: $(NAME)
 

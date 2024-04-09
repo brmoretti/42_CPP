@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/06 15:24:21 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/08 14:51:52 by bmoretti         ###   ########.fr       */
+/*   Created: 2024/04/08 19:00:36 by bmoretti          #+#    #+#             */
+/*   Updated: 2024/04/08 19:24:44 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-int	main( void )
+class Fixed
 {
-	Harl	harl;
+private:
+	int					_int;
+	static const int	_frac = 8;
 
-	harl.complain("DEBUG");
-	harl.complain("INFO");
-	harl.complain("WARNING");
-	harl.complain("ERROR");
-
-	return 0;
+public:
+	Fixed( void );
+	~Fixed( void );
+	Fixed( Fixed const & src );
+	Fixed&	operator=( Fixed const & rhs );
 }
+
+#endif

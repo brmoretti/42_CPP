@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 02:28:04 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/05 11:38:53 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/08 14:44:36 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main ( void )
 	Zombie*		mimi = newZombie("MIMI");
 
 	mimi->announce();
-	randomChump("COCÓ");
+	randomChump("LAMBARI");
 	delete mimi;
 	return 0;
 }

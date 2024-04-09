@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/06 15:24:21 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/08 14:51:52 by bmoretti         ###   ########.fr       */
+/*   Created: 2024/04/08 19:19:42 by bmoretti          #+#    #+#             */
+/*   Updated: 2024/04/08 19:49:08 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Fixed.hpp"
 
-int	main( void )
+Fixed::Fixed() : _int(0)
 {
-	Harl	harl;
+}
 
-	harl.complain("DEBUG");
-	harl.complain("INFO");
-	harl.complain("WARNING");
-	harl.complain("ERROR");
+Fixed::~Fixed()
+{
+}
 
-	return 0;
+Fixed::Fixed( Fixed const & src )
+{
+	*this = src;
+}
+
+Fixed&	Fixed::operator=( Fixed const & rhs )
+{
+	if (this != &rhs)
+		this->_int = rhs._int;
+	return *this;
 }
