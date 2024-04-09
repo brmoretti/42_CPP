@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 10:17:03 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/09 15:52:20 by bmoretti         ###   ########.fr       */
+/*   Created: 2024/04/09 14:06:27 by bmoretti          #+#    #+#             */
+/*   Updated: 2024/04/09 14:43:13 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#ifndef POINT_HPP
+# define POINT_HPP
 
-bool	bsp( Point const a, Point const b, Point const c, Point const point);
+#include "Fixed.hpp"
 
-int	main( void )
+class Point
 {
-	Point a( 0.0, 0.0 );
-	Point b( 10.0, 30.0 );
-	Point c( 20.0, 0.0 );
-	Point p1( 10.0, 15.0 );
-	Point p2( 30.0, 15.0 );
+private:
+	const Fixed	_x;
+	const Fixed	_y;
 
-	std::cout << "Case 1: " << bsp(a, b, c, p1) << std::endl;
-	std::cout << "Case 2: " << bsp(a, b, c, p2) << std::endl;
+public:
+	Point();
+	Point( const float x, const float & y );
+	~Point();
+	Point( const Point & src );
+	Point&	operator=( const Point & rhs );
+	const Fixed	getX( void ) const;
+	const Fixed	getY( void ) const;
+};
 
-	return 0;
-}
+#endif

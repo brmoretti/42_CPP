@@ -1,7 +1,8 @@
-NAME		=	NowWeAreTalking
+NAME		=	ex03
 SRCS		=	$(wildcard src/*.cpp)
 INCLUDE_FLS	=	$(wildcard src/*.hpp)
-INCLUDES	=	-Isrc
+INCLUDES	=	-Isrc		\
+				-Iinclude
 CC			=	c++
 FLAGS		=	-Wall		\
 				-Wextra		\

@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 10:17:03 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/09 15:52:20 by bmoretti         ###   ########.fr       */
+/*   Created: 2024/04/09 15:06:41 by bmoretti          #+#    #+#             */
+/*   Updated: 2024/04/09 15:45:52 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-bool	bsp( Point const a, Point const b, Point const c, Point const point);
-
-int	main( void )
+static bool	sign( const Point & p1, const Point & p2, const Point & p3)
 {
-	Point a( 0.0, 0.0 );
-	Point b( 10.0, 30.0 );
-	Point c( 20.0, 0.0 );
-	Point p1( 10.0, 15.0 );
-	Point p2( 30.0, 15.0 );
+	Fixed	side;
+	Fixed	zero;
 
-	std::cout << "Case 1: " << bsp(a, b, c, p1) << std::endl;
-	std::cout << "Case 2: " << bsp(a, b, c, p2) << std::endl;
+	side = (p1.getX() - p3.getX()) * (p2.getY() - p3.getY()) \
+		- (p2.getX() - p3.getX()) * (p1.getY() - p3.getY());
+	return ( side > zero );
+}
 
-	return 0;
+bool	bsp( Point const a, Point const b, Point const c, Point const point)
+{
+	return sign(point, a, b) == sign(point, b, c) == sign(point, c, a);
 }

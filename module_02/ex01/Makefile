@@ -1,4 +1,4 @@
-NAME		=	TowardsAMoreUsefulFixed-PointNumberClass
+NAME		=	ex01
 SRCS		=	$(wildcard src/*.cpp)
 INCLUDE_FLS	=	$(wildcard src/*.hpp)
 INCLUDES	=	-Isrc

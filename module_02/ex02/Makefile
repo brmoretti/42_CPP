@@ -1,4 +1,4 @@
-NAME		=	NowWeAreTalking
+NAME		=	ex02
 SRCS		=	$(wildcard src/*.cpp)
 INCLUDE_FLS	=	$(wildcard src/*.hpp)
 INCLUDES	=	-Isrc
