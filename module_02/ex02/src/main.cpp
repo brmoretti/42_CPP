@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 10:17:03 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/09 10:48:00 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/10 16:53:00 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	main( void )
 	std::cout << "a == a: " << (a == a) << std::endl;
 	std::cout << "a != b: " << (a != b) << std::endl;
 	std::cout << "a != a: " << (a != a) << std::endl;
+	std::cout << "min( a, b ): " << Fixed::min( a, b ) << std::endl;
 
 	return 0;
 }

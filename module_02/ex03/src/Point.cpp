@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:05:35 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/09 15:53:29 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/10 13:53:35 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@ Point::Point() : _x(Fixed()), _y(Fixed())
 
 Point::Point( const float x, const float & y ) : _x(Fixed(x)), _y(Fixed(y))
 {
-
 }
 
 Point::~Point()
 {
-
 }
 
 Point::Point( const Point & src )
@@ -33,10 +31,9 @@ Point::Point( const Point & src )
 
 Point&	Point::operator=( const Point & rhs )
 {
-	(void)rhs;
-	std::cerr << "Can't assign because x and y " \
-	"are const Fixed type" << std::endl;
-	return *this;
+	(Fixed &)this->_x = rhs._x;
+	(Fixed &)this->_y = rhs._y;
+	return (*this);
 }
 
 const Fixed	Point::getX( void ) const
