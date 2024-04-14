@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:19:42 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/09 10:14:29 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/14 00:10:47 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int				Fixed::toInt( void ) const
 	return this->_fixed >> this->_fractional;
 }
 
-std::ostream&	operator<<( std::ostream & _cout, Fixed const & fixed)
+std::ostream&	operator<<( std::ostream & _cout, Fixed const & fixed )
 {
 	_cout << fixed.toFloat();
 	return _cout;
