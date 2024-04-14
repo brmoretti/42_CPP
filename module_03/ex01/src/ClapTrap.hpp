@@ -6,7 +6,7 @@
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:13:04 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/13 22:30:39 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/13 22:34:58 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
 	int			getAttackDamage(void) const;
 	void		setAttackDamage(int attack_damage);
 
-private:
+protected:
 	std::string const	_name;
 	int					_hit_points;
 	int					_energy_points;
@@ -41,6 +41,8 @@ private:
 	bool				_isDead();
 	bool				_isExausted();
 	bool				_isOk();
+
+private:
 	const static int	HIT_POINTS = 10;
 	const static int	ENERGY_POINTS = 10;
 	const static int	ATTACK_DAMAGE = 0;
