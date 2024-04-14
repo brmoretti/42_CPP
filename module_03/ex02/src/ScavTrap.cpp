@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 14:25:08 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/13 23:40:02 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/14 17:21:39 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ _gate_keeper_mode(false)
 	std::cout << " constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name),
+ScavTrap::ScavTrap(const std::string name) : ClapTrap(name),
 _gate_keeper_mode(false)
 {
 	this->_hit_points = HIT_POINTS;

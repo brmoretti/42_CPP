@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:13:18 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/13 22:45:24 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/14 17:20:17 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ _attack_damage(ClapTrap::ATTACK_DAMAGE)
 	std::cout << " constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name),
+ClapTrap::ClapTrap(const std::string name) : _name(name),
 _hit_points(ClapTrap::HIT_POINTS), _energy_points(ClapTrap::ENERGY_POINTS),
 _attack_damage(ClapTrap::ATTACK_DAMAGE)
 {

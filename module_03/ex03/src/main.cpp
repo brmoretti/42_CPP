@@ -6,12 +6,11 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 13:22:26 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/14 17:32:42 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/14 18:10:17 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main()
 {
@@ -38,6 +37,12 @@ int	main()
 
 	FragTrap	chapolim("Chapolim");
 	chapolim.highFivesGuys();
+
+	DiamondTrap		brabo("Brabo");
+
+	// brabo.whoAmI();
+	// brabo.attack("Chapolim");
+	// chapolim.takeDamage(brabo.getAttackDamage());
 
 	return 0;
 }

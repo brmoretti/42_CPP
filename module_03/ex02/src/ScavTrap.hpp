@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 14:14:10 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/13 23:34:23 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/14 17:21:45 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap
 {
 public:
 	ScavTrap();
-	ScavTrap(std::string name);
+	ScavTrap(const std::string name);
 	~ScavTrap();
 	ScavTrap(const ScavTrap & rhs);
 	ScavTrap&	operator=(const ScavTrap & rhs);
-	
+
 	void	guardGate();
 	void	attack(const std::string& target);
 

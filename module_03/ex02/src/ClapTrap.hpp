@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:13:04 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/13 22:34:58 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/14 17:20:59 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class ClapTrap
 {
 public:
 	ClapTrap();
-	ClapTrap(std::string name);
+	ClapTrap(const std::string name);
 	~ClapTrap();
 	ClapTrap(const ClapTrap & rhs);
 	ClapTrap&	operator=(const ClapTrap & rhs);

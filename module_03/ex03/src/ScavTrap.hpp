@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 14:14:10 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/14 17:21:19 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/14 17:23:04 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 # include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 public:
-	FragTrap();
-	FragTrap(const std::string name);
-	~FragTrap();
-	FragTrap(const FragTrap & rhs);
-	FragTrap&	operator=(const FragTrap & rhs);
+	ScavTrap();
+	ScavTrap(const std::string name);
+	~ScavTrap();
+	ScavTrap(const ScavTrap & rhs);
+	ScavTrap&	operator=(const ScavTrap & rhs);
 
-	void	highFivesGuys(void);
+	void	guardGate();
+	void	attack(const std::string& target);
 
 protected:
+	bool				_gate_keeper_mode;
 	const static int	HIT_POINTS = 100;
-	const static int	ENERGY_POINTS = 100;
-	const static int	ATTACK_DAMAGE = 30;
+	const static int	ENERGY_POINTS = 50;
+	const static int	ATTACK_DAMAGE = 20;
 };
 
 #endif

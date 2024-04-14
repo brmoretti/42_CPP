@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 14:14:10 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/14 17:21:19 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/14 18:01:38 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-# include "ClapTrap.hpp"
+# include "FragTrap.hpp"
+# include "ScavTrap.hpp"
 
-class FragTrap : public ClapTrap
+class DiamondTrap : public FragTrap, public ScavTrap
 {
 public:
-	FragTrap();
-	FragTrap(const std::string name);
-	~FragTrap();
-	FragTrap(const FragTrap & rhs);
-	FragTrap&	operator=(const FragTrap & rhs);
+	DiamondTrap();
+	DiamondTrap(const std::string name);
+	~DiamondTrap();
+	DiamondTrap(const DiamondTrap & rhs);
+	DiamondTrap&	operator=(const DiamondTrap & rhs);
 
-	void	highFivesGuys(void);
+	void	attack(const std::string& target);
+	void	whoAmI();
 
-protected:
-	const static int	HIT_POINTS = 100;
-	const static int	ENERGY_POINTS = 100;
-	const static int	ATTACK_DAMAGE = 30;
+private:
+	std::string const	_name;
 };
 
 #endif
