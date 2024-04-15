@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:13:18 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/14 17:22:06 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/15 11:11:57 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ ClapTrap::ClapTrap(const ClapTrap & rhs)
 ClapTrap&	ClapTrap::operator=(const ClapTrap & rhs)
 {
 	if (this != &rhs) {
-		(std::string &) this->_name = rhs._name;
+		this->_name = rhs._name;
 		this->_hit_points = rhs._hit_points;
 		this->_energy_points = rhs._energy_points;
 		this->_attack_damage = rhs._attack_damage;

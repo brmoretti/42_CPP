@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 13:22:26 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/14 17:32:42 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/15 11:58:29 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,14 @@ int	main()
 	popoh.beRepaired(20);
 
 	FragTrap	chapolim("Chapolim");
+
+	std::cout << "--------------x--------------" << std::endl;
+	std::cout << "\033[1;32m" << chapolim.getName() << "\033[0m" << std::endl;
+	std::cout << "Attack Damage: " << chapolim.getAttackDamage() << std::endl;
+	std::cout << "Energy Points: " << chapolim.getEnergyPoints() << std::endl;
+	std::cout << "Hit Points: " << chapolim.getHitPoints() << std::endl;
+	std::cout << "--------------x--------------\n" << std::endl;
+
 	chapolim.highFivesGuys();
 
 	return 0;

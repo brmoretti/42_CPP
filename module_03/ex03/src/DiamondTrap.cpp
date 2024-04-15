@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 15:19:41 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/14 18:09:25 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/15 11:27:29 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 //CONSTRUCTORS & DESTRUCTOR
 
-DiamondTrap::DiamondTrap() : FragTrap(), ScavTrap(), _name("UNNAMED")
+DiamondTrap::DiamondTrap() : _name("UNNAMED")
 {
-	(DiamondTrap &) this->ClapTrap::_name = this->_name + "_clap_name";
+	(ClapTrap &) ClapTrap::_name = this->_name + "_clap_name";
 	this->_hit_points = FragTrap::HIT_POINTS;
 	this->_energy_points = ScavTrap::ENERGY_POINTS;
 	this->_attack_damage = FragTrap::ATTACK_DAMAGE;
@@ -24,9 +24,10 @@ DiamondTrap::DiamondTrap() : FragTrap(), ScavTrap(), _name("UNNAMED")
 	std::cout << " constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const std::string name) : FragTrap(name), ScavTrap(name)
+DiamondTrap::DiamondTrap(const std::string name) :
+	ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name), _name(name)
 {
-	(DiamondTrap &) this->_name = this->_name + "_clap_name";
+	//ClapTrap::_name = this->_name + "_clap_name";
 	this->_hit_points = FragTrap::HIT_POINTS;
 	this->_energy_points = ScavTrap::ENERGY_POINTS;
 	this->_attack_damage = FragTrap::ATTACK_DAMAGE;
@@ -66,6 +67,7 @@ void	DiamondTrap::attack(const std::string& target)
 
 void	DiamondTrap::whoAmI()
 {
+	std::cout << "\033[1;34mWHO AM I??\033[0m\n";
 	std::cout << "My name: " << this->_name << "\n";
 	std::cout << "My ClapTrap name: " << this->ClapTrap::_name << std::endl;
 }
