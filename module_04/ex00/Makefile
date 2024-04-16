@@ -1,4 +1,4 @@
-NAME		=	ex03
+NAME		=	ex00
 SRCS		=	$(wildcard src/*.cpp)
 INCLUDE_FLS	=	$(wildcard include/*.hpp)
 INCLUDES	=	-Isrc		\

@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:35:18 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/15 19:00:01 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/16 11:41:33 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,27 @@
 
 Animal::Animal() : type("NONE")
 {
-	std::cout << "\033[1;34mAnimal\033[0m constructor called" << std::endl;
+	std::cout << BLUE << "Animal" << RESET;
+	std::cout << " constructor called" << std::endl;
 }
 
 Animal::~Animal()
 {
-	std::cout << "\033[1;34mAnimal\033[0m destructor called" << std::endl;
+	std::cout << BLUE << "Animal" << RESET;
+	std::cout << " destructor called" << std::endl;
 }
 
 Animal::Animal(const Animal & rhs)
 {
-	std::cout << "\033[1;34mAnimal\033[0m copy constructor called";
-	std::cout << std::endl;
+	std::cout << BLUE << "Animal" << RESET;
+	std::cout << " copy constructor called" << std::endl;
 	*this = rhs;
 }
 
 Animal&	Animal::operator=(const Animal & rhs)
 {
-	std::cout << "\033[1;34mAnimal\033[0m '=' operator called";
-	std::cout << std::endl;
+	std::cout << BLUE << "Animal" << RESET;
+	std::cout << " '=' operator called" << std::endl;
 	if (this != &rhs) {
 		this->type = rhs.type;
 	}
@@ -51,5 +53,5 @@ void	Animal::setType(const std::string& type)
 
 void Animal::makeSound() const
 {
-	std::cout << "*Is it you, giraffe?*" << std::endl;
+	std::cout << BLUE << "*Is it you, giraffe?*" << RESET << std::endl;
 }

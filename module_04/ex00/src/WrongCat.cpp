@@ -1,48 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 15:49:46 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/16 10:45:14 by bmoretti         ###   ########.fr       */
+/*   Created: 2024/04/16 11:07:01 by bmoretti          #+#    #+#             */
+/*   Updated: 2024/04/16 11:07:05 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-Dog::Dog()
+WrongCat::WrongCat()
 {
-	std::cout << YELLOW << "Dog" << RESET;
+	std::cout << RED << "WrongCat" << RESET;
 	std::cout << " constructor called" << std::endl;
-	this->setType("Dog");
+	this->setType("WrongCat");
 }
 
-Dog::~Dog()
+WrongCat::~WrongCat()
 {
-	std::cout << YELLOW << "Dog" << RESET;
+	std::cout << RED << "WrongCat" << RESET;
 	std::cout << " destructor called" << std::endl;
 }
 
-Dog::Dog(const Dog & rhs)
+WrongCat::WrongCat(const WrongCat & rhs)
 {
-	std::cout << YELLOW << "Dog" << RESET;
+	std::cout << RED << "WrongCat" << RESET;
 	std::cout << " copy constructor called" << std::endl;
 	*this = rhs;
 }
 
-Dog&	Dog::operator=(const Dog & rhs)
+WrongCat&	WrongCat::operator=(const WrongCat & rhs)
 {
-	std::cout << YELLOW << "Dog" << RESET;
+	std::cout << RED << "WrongCat" << RESET;
 	std::cout << " '=' operator called" << std::endl;
 	if (this != &rhs) {
-		Animal::operator=(rhs);
+		WrongAnimal::operator=(rhs);
 	}
 	return *this;
 }
 
-void	Dog::makeSound() const
+void	WrongCat::makeSound() const
 {
-	std::cout << YELLOW << "Woof>🐩" << RESET << std::endl;
+	std::cout << RED << "Meow>🐈" << RESET << std::endl;
 }

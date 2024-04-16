@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:34:24 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/16 11:27:23 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/16 11:05:22 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 # include <iostream>
 
@@ -25,16 +25,16 @@
 # define BLACK "\033[1;30m"
 # define BLUE "\033[1;34m"
 
-class Animal
+class WrongAnimal
 {
 public:
-	Animal();
-	virtual ~Animal();
-	Animal(const Animal & rhs);
-	Animal&	operator=(const Animal & rhs);
+	WrongAnimal();
+	~WrongAnimal();
+	WrongAnimal(const WrongAnimal & rhs);
+	WrongAnimal&	operator=(const WrongAnimal & rhs);
 	std::string		getType() const;
 	void			setType(const std::string& type);
-	virtual void	makeSound() const;
+	void	makeSound() const;
 
 protected:
 	std::string	type;

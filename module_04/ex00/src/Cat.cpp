@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 16:07:11 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/15 18:57:30 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/16 10:47:56 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,28 @@
 
 Cat::Cat()
 {
-	std::cout << "\033[1;31mCat\033[0m constructor called" << std::endl;
+	std::cout << RED << "Cat" << RESET;
+	std::cout << " constructor called" << std::endl;
 	this->setType("Cat");
 }
 
 Cat::~Cat()
 {
-	std::cout << "\033[1;31mCat\033[0m destructor called" << std::endl;
+	std::cout << RED << "Cat" << RESET;
+	std::cout << " destructor called" << std::endl;
 }
 
 Cat::Cat(const Cat & rhs)
 {
-	std::cout << "\033[1;31mCat\033[0m copy constructor called";
-	std::cout << std::endl;
+	std::cout << RED << "Cat" << RESET;
+	std::cout << " copy constructor called" << std::endl;
 	*this = rhs;
 }
 
 Cat&	Cat::operator=(const Cat & rhs)
 {
-	std::cout << "\033[1;31mCat\033[0m '=' operator called";
-	std::cout << std::endl;
+	std::cout << RED << "Cat" << RESET;
+	std::cout << " '=' operator called" << std::endl;
 	if (this != &rhs) {
 		Animal::operator=(rhs);
 	}
@@ -42,5 +44,5 @@ Cat&	Cat::operator=(const Cat & rhs)
 
 void	Cat::makeSound() const
 {
-	std::cout << "Meow>🐈" << std::endl;
+	std::cout << RED << "Meow>🐈" << RESET << std::endl;
 }
