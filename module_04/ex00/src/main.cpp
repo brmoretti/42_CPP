@@ -5,27 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/13 13:22:26 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/15 15:06:33 by bmoretti         ###   ########.fr       */
+/*   Created: 2024/04/15 16:25:40 by bmoretti          #+#    #+#             */
+/*   Updated: 2024/04/15 17:04:15 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
 int	main()
 {
-	FragTrap		chapolim("Chapolim");
-	DiamondTrap		brabo("Silvio Santos");
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-	brabo.whoAmI();
-	std::cout << "Attack Damage: " << brabo.getAttackDamage() << std::endl;
-	std::cout << "Energy Points: " << brabo.getEnergyPoints() << std::endl;
-	std::cout << "Hit Points: " << brabo.getHitPoints() << std::endl;
-	brabo.guardGate();
-	brabo.beRepaired(10);
-	brabo.highFivesGuys();
-	brabo.attack("Chapolim");
-	chapolim.takeDamage(brabo.getAttackDamage());
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound();
+	j->makeSound();
+	meta->makeSound();
+
+	delete meta;
+	delete j;
+	delete i;
 
 	return 0;
 }

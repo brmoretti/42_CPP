@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 15:19:41 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/15 11:27:29 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:05:39 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 //CONSTRUCTORS & DESTRUCTOR
 
-DiamondTrap::DiamondTrap() : _name("UNNAMED")
+DiamondTrap::DiamondTrap() :
+	ClapTrap("UNNAMED_clap_name")
 {
-	(ClapTrap &) ClapTrap::_name = this->_name + "_clap_name";
 	this->_hit_points = FragTrap::HIT_POINTS;
 	this->_energy_points = ScavTrap::ENERGY_POINTS;
 	this->_attack_damage = FragTrap::ATTACK_DAMAGE;
@@ -27,7 +27,6 @@ DiamondTrap::DiamondTrap() : _name("UNNAMED")
 DiamondTrap::DiamondTrap(const std::string name) :
 	ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name), _name(name)
 {
-	//ClapTrap::_name = this->_name + "_clap_name";
 	this->_hit_points = FragTrap::HIT_POINTS;
 	this->_energy_points = ScavTrap::ENERGY_POINTS;
 	this->_attack_damage = FragTrap::ATTACK_DAMAGE;
@@ -50,7 +49,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap & rhs) : ClapTrap(rhs)
 DiamondTrap&	DiamondTrap::operator=(const DiamondTrap & rhs)
 {
 	if (this != &rhs) {
-		(DiamondTrap &) this->_name = rhs._name;
+		(std::string &) this->_name = rhs._name;
 		this->_hit_points = rhs._hit_points;
 		this->_energy_points = rhs._energy_points;
 		this->_attack_damage = rhs._attack_damage;
