@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:49:46 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/16 18:15:36 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/17 10:39:31 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ Dog::Dog(const Dog & rhs)
 {
 	std::cout << YELLOW << "Dog" << RESET;
 	std::cout << " copy constructor called" << std::endl;
+	this->_brain = new Brain();
 	*this = rhs;
 }
 

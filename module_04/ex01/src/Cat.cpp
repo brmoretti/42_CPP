@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 16:07:11 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/16 18:16:00 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/17 10:30:18 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ Cat::Cat(const Cat & rhs)
 {
 	std::cout << RED << "Cat" << RESET;
 	std::cout << " copy constructor called" << std::endl;
+	this->_brain = new Brain();
 	*this = rhs;
 }
 
