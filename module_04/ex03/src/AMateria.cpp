@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:47:06 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/17 15:54:18 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:00:49 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ std::string const &	AMateria::getType() const
 
 void	AMateria::use(ICharacter& target)
 {
-
+	std::cout << "Using *nothing* on " << target.getName();
+	std::cout << std::endl;
 }

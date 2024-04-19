@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:44:24 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/17 17:58:55 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:47:20 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
 #include "Character.hpp"
+#include "Floor.hpp"
 #include "Ice.hpp"
+#include "MateriaSource.hpp"
 
 int main()
 {

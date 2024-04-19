@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Floor.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 12:22:45 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/18 12:57:03 by bmoretti         ###   ########.fr       */
+/*   Created: 2024/04/18 15:57:00 by bmoretti          #+#    #+#             */
+/*   Updated: 2024/04/18 16:49:43 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef FLOOR_HPP
+# define FLOOR_HPP
 
-# include <iostream>
-# include <string>
+# include "AMateria.hpp"
 
-# include "ICharacter.hpp"
-
-class AMateria
+class Floor
 {
-protected:
-	std::string	_type;
-
 public:
-	AMateria(std::string const & type);
-	virtual ~AMateria();
-	AMateria(const AMateria & rhs);
-	AMateria&	operator=(const AMateria & rhs);
+	Floor();
+	~Floor();
+	Floor(const Floor & rhs);
+	Floor&	operator=(const Floor & rhs);
 
-	std::string const &	getType() const;
-	virtual AMateria*	clone() const = 0;
-	virtual void		use(ICharacter& target);
+	bool		drop(AMateria *m);
+
+private:
+	AMateria*	_spaces[10];
+	void		clearFloorItems();
+	void		cloneFloorItems(const Floor & floor);
 };
 
 #endif
