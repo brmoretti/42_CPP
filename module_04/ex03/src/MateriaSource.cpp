@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:08:13 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/17 17:49:26 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/19 19:07:59 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,15 @@
 MateriaSource::MateriaSource() : _n_learned_materias(0)
 {
 	std::cout << "Materia constructor called" << std::endl;
+	for (int i = 0; i < 4; i++) {
+		this->_learned_materias[i] = NULL;
+	}
 }
 
 MateriaSource::~MateriaSource()
 {
 	std::cout << "Materia destructor called" << std::endl;
-	for (int i = 0; i < this->_n_learned_materias; i++) {
-		delete this->_learned_materias[i];
-	}
+	this->clearMaterias();
 }
 
 MateriaSource::MateriaSource(const MateriaSource & rhs)
@@ -34,10 +35,11 @@ MateriaSource::MateriaSource(const MateriaSource & rhs)
 MateriaSource&	MateriaSource::operator=(const MateriaSource & rhs)
 {
 	std::cout << "Materia '=' operator overload called" << std::endl;
-	this->_n_learned_materias = rhs._n_learned_materias;
-	for (int i = 0; i < this->_n_learned_materias; i++) {
-		this->_learned_materias[i] = rhs._learned_materias[i]->clone();
+	if (this != &rhs) {
+		this->clearMaterias();
+		this->cloneMaterias(rhs);
 	}
+	return *this;
 }
 
 //IMateriaSource
@@ -62,4 +64,26 @@ AMateria*	MateriaSource::createMateria(std::string materia_type)
 		}
 	}
 	std::cout << "Clone failed. Unknown type of Materia" << std::endl;
+	return NULL;
+}
+
+void	MateriaSource::clearMaterias()
+{
+	for (int i = 0; i < 4; i++) {
+		if (this->_learned_materias[i]) {
+			delete this->_learned_materias[i];
+			this->_learned_materias[i] = NULL;
+		}
+	}
+}
+
+void	MateriaSource::cloneMaterias(const MateriaSource & m_source)
+{
+	this->clearMaterias();
+	for (int i = 0; i < 4; i++) {
+		if (m_source._learned_materias[i]) {
+			this->_learned_materias[i] =
+				m_source._learned_materias[i]->clone();
+		}
+	}
 }

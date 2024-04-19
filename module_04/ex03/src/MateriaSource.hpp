@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:06:20 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/17 17:07:15 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/19 19:05:14 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ public:
 private:
 	AMateria*	_learned_materias[4];
 	int			_n_learned_materias;
+
+	void		clearMaterias();
+	void		cloneMaterias(const MateriaSource & m_source);
 };
 
 #endif
