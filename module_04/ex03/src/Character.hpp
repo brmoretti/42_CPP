@@ -6,12 +6,14 @@
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:51:13 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/18 16:32:49 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/20 14:45:03 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
+
+# include "DefineColors.hpp"
 
 # include "ICharacter.hpp"
 # include "Floor.hpp"

@@ -6,11 +6,12 @@
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:47:06 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/18 13:00:49 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/20 14:13:34 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 AMateria::AMateria(std::string const & type) : _type(type)
 {
@@ -18,7 +19,7 @@ AMateria::AMateria(std::string const & type) : _type(type)
 }
 AMateria::~AMateria()
 {
-	std::cout << "Amateria desstructor called" << std::endl;
+	std::cout << "Amateria destructor called" << std::endl;
 }
 
 AMateria::AMateria(const AMateria & rhs)

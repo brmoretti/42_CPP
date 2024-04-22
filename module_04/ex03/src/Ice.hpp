@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:00:00 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/17 16:14:30 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/20 14:45:18 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICE_HPP
 # define ICE_HPP
+
+# include "DefineColors.hpp"
 
 # include "AMateria.hpp"
 

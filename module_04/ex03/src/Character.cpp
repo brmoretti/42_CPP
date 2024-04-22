@@ -6,7 +6,7 @@
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:09:30 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/18 16:51:58 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/20 14:46:02 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Character::~Character()
 {
 	std::cout << "Character destructor called" << std::endl;
 
-	this.
+	this->clearInventory();
 }
 
 Character::Character(const Character & rhs)
@@ -54,7 +54,8 @@ void	Character::equip(AMateria* m)
 	for (int i = 0; i < 4; i++) {
 		if (this->_inventory[i] == NULL) {
 			this->_inventory[i] = m;
-			std::cout << m->getType() << " equiped" << std::endl;
+			std::cout << BG_YELLOW(
+					m->getType() << " equiped") << std::endl;
 			return;
 		}
 	}
