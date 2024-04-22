@@ -6,16 +6,29 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 11:53:18 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/17 12:12:00 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:55:42 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AAnimal.hpp"
 
+AAnimal::AAnimal() : type("NONE")
+{
+	std::cout << BLUE << "Animal" << RESET;
+	std::cout << " constructor called" << std::endl;
+}
+
 AAnimal::~AAnimal()
 {
 	std::cout << BLUE << "AAnimal" << RESET;
 	std::cout << " destructor called" << std::endl;
+}
+
+AAnimal::AAnimal(const AAnimal & rhs)
+{
+	std::cout << BLUE << "AAnimal" << RESET;
+	std::cout << " copy constructor called" << std::endl;
+	*this = rhs;
 }
 
 AAnimal&	AAnimal::operator=(const AAnimal & rhs)
@@ -37,4 +50,3 @@ void	AAnimal::setType(const std::string& type)
 {
 	this->type = type;
 }
-

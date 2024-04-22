@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:34:24 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/17 12:11:06 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:55:26 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@
 class AAnimal
 {
 public:
+	AAnimal();
 	virtual ~AAnimal();
+	AAnimal(const AAnimal & rhs);
 	AAnimal&	operator=(const AAnimal & rhs);
 	std::string		getType() const;
 	void			setType(const std::string& type);
