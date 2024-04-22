@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Floor.hpp                                          :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 15:57:00 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/22 15:18:37 by bmoretti         ###   ########.fr       */
+/*   Created: 2024/04/17 13:00:00 by bmoretti          #+#    #+#             */
+/*   Updated: 2024/04/22 14:54:06 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FLOOR_HPP
-# define FLOOR_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
 # include "DefineColors.hpp"
 
 # include "AMateria.hpp"
 
-class Floor
+class Cure : public AMateria
 {
 public:
-	Floor();
-	~Floor();
-	Floor(const Floor & rhs);
-	Floor&	operator=(const Floor & rhs);
+	Cure();
+	~Cure();
+	Cure(const Cure & rhs);
+	Cure&	operator=(const Cure & rhs);
 
-	bool		drop(AMateria *m);
-
-private:
-	AMateria*	_spaces[10];
-	void		clearFloorItems();
-	void		cloneFloorItems(const Floor & floor);
+	AMateria*	clone() const;
+	void		use(ICharacter& target);
 };
 
 #endif

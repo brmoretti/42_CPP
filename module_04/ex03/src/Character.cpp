@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:09:30 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/20 14:46:02 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:38:13 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,40 +51,50 @@ std::string	const &	Character::getName() const
 
 void	Character::equip(AMateria* m)
 {
+	if (!m) {
+		std::cout << BG_YELLOW(
+			"There's no Materia to equip") << std::endl;
+		return;
+	}
 	for (int i = 0; i < 4; i++) {
 		if (this->_inventory[i] == NULL) {
 			this->_inventory[i] = m;
-			std::cout << BG_YELLOW(
-					m->getType() << " equiped") << std::endl;
+			std::cout << BG_YELLOW(m->getType() << " equiped (Slot ";
+			std::cout << i << ")") << std::endl;
 			return;
 		}
 	}
-	std::cout << "Inventory is full!" << std::endl;
+	std::cout << BG_YELLOW("Inventory is full!") << std::endl;
 }
 
 void	Character::unequip(int idx)
 {
 	AMateria* &	m = this->_inventory[idx];
 
-	if (m == NULL) {
-		std::cout << "Nothing to drop" << std::endl;
+	if (!m) {
+		std::cout << BG_YELLOW("Nothing to drop") << std::endl;
 		return;
 	}
 	if (this->_floor) {
 		this->_floor->drop(m);
+		m = NULL;
 		return;
 	}
-	std::cout << "Set the character floor first";
+	std::cout << BG_YELLOW("Set the character floor first");
 	std::cout << std::endl;
 }
 
 void	Character::use(int idx, ICharacter& target)
 {
-	if (this->_inventory[idx]) {
-		this->_inventory[idx]->use(target);
-		delete this->_inventory[idx];
-		this->_inventory[idx] = NULL;
+	AMateria* &	m = this->_inventory[idx];
+
+	if (m) {
+		m->use(target);
+		delete m;
+		m = NULL;
+		return;
 	}
+	std::cout << BG_YELLOW("Nothing to use") << std::endl;
 }
 
 void	Character::setFloor(Floor* floor)

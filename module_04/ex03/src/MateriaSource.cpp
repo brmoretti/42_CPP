@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:08:13 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/19 19:07:59 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:33:22 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void		MateriaSource::learnMateria(AMateria *materia)
 {
 	if (this->_n_learned_materias < MAX_LEARNED_MATERIAS) {
 		this->_learned_materias[_n_learned_materias] = materia;
-		std::cout << materia->getType();
-		std::cout << " learned. (Slot " << this->_n_learned_materias++ << ")";
+		std::cout << BG_CYAN(materia->getType();
+		std::cout << " learned. (Slot " << this->_n_learned_materias++ << ")");
 		std::cout << std::endl;
 		return;
 	}
@@ -59,11 +59,12 @@ AMateria*	MateriaSource::createMateria(std::string materia_type)
 {
 	for (int i = 0; i < this->_n_learned_materias; i++) {
 		if (!this->_learned_materias[i]->getType().compare(materia_type)) {
-			std::cout << "Materia cloned" << std::endl;
+			std::cout << BG_CYAN("Materia cloned") << std::endl;
 			return this->_learned_materias[i]->clone();
 		}
 	}
-	std::cout << "Clone failed. Unknown type of Materia" << std::endl;
+	std::cout << BG_CYAN("Clone failed. Unknown type of Materia " << materia_type);
+	std::cout << std::endl;
 	return NULL;
 }
 

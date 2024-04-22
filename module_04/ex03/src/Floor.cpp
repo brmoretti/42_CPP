@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Floor.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:01:58 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/18 16:45:47 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:36:40 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,16 @@ bool	Floor::drop(AMateria *m)
 {
 	static int	n_dropped = 0;
 
+	if (!m) {
+		std::cout << BG_BROWN("Nothing to drop") << std::endl;
+	}
+
 	while (n_dropped < 10) {
 		this->_spaces[n_dropped++] = m;
-		std::cout << m->getType() << " dropped" << std::endl;
+		std::cout << BG_BROWN(m->getType() << " dropped") << std::endl;
 		return true;
 	}
-	std::cout << "The floor is full of garbage. Unable to drop";
+	std::cout << BG_BROWN("The floor is full of garbage. Unable to drop");
 	std::cout << std::endl;
 	return false;
 }
