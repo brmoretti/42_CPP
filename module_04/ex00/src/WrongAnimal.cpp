@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:04:07 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/16 11:04:13 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:45:10 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ WrongAnimal&	WrongAnimal::operator=(const WrongAnimal & rhs)
 	std::cout << BLUE << "WrongAnimal" << RESET;
 	std::cout << " '=' operator called" << std::endl;
 	if (this != &rhs) {
-		this->type = rhs.type;
+		if (this->type != rhs.type) {
+			std::cout << BLUE << "Animals can't change their's types";
+			std::cout << RESET << std::endl;
+		}
 	}
 	return *this;
 }

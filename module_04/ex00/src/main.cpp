@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 16:25:40 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/16 11:39:07 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:39:27 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ int	main()
 		meta->makeSound();
 		cat->makeSound();
 		dog->makeSound();
-		std::cout << WHITE << "Wait...What?" << RESET << std::endl;
 
 		delete meta;
 		delete dog;

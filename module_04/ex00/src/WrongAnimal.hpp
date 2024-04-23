@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:34:24 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/16 11:05:22 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:18:51 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ public:
 	WrongAnimal&	operator=(const WrongAnimal & rhs);
 	std::string		getType() const;
 	void			setType(const std::string& type);
-	void	makeSound() const;
+	void			makeSound() const;
 
 protected:
 	std::string	type;

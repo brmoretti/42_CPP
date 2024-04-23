@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:47:06 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/20 14:13:34 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:44:48 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ AMateria::AMateria(const AMateria & rhs)
 AMateria&			AMateria::operator=(const AMateria & rhs)
 {
 	if (this != &rhs) {
-		this->_type = rhs._type;
+		if (this->_type != rhs._type) {
+			std::cout << "Materias can't change their's types";
+			std::cout << std::endl;
+		}
 	}
 	return *this;
 }
