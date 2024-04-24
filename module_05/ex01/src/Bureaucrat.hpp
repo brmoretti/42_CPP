@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 12:16:25 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/23 16:23:04 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/24 18:04:10 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@
 # define GREEN(text) "\033[32m" << text << "\033[0m"
 # define WHITE(text) "\033[37m" << text << "\033[0m"
 # define MAGENTA(text) "\033[35m" << text << "\033[0m"
+# define RED(text) "\033[31m" << text << "\033[0m"
+
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -34,8 +39,10 @@ public:
 	std::string			getName() const;
 	int					getGrade() const;
 
-	void		incrementGrade();
-	void		decrementGrade();
+	void				incrementGrade();
+	void				decrementGrade();
+
+	void				signForm(Form& form);
 
 	class GradeTooHighException : public std::exception
 	{

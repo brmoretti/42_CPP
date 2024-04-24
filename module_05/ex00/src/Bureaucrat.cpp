@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 12:16:31 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/23 17:46:24 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/24 18:36:51 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ Bureaucrat::Bureaucrat(const std::string & name, const int & grade) :
 	std::cout << MAGENTA(this->_name << " constructor called") << std::endl;
 	if (grade < this->_MAX_GRADE) {
 		throw Bureaucrat::GradeTooHighException();
-	} else if (grade > this->_MIN_GRADE) {
+		return;
+	if (grade > this->_MIN_GRADE) {
 		throw Bureaucrat::GradeTooLowException();
+		return;
 	}
 	this->_grade = grade;
 }
@@ -68,8 +70,9 @@ void		Bureaucrat::incrementGrade()
 		throw Bureaucrat::GradeTooHighException();
 		return;
 	}
-	this->_grade--;
-	std::cout << this->_name << ": grade incremented" << std::endl;
+	std::cout << this->_name << ": grade incremented from " \
+		<< this->_grade--;
+	std::cout << " to " << this->_grade << std::endl;
 }
 
 void		Bureaucrat::decrementGrade()
@@ -78,18 +81,19 @@ void		Bureaucrat::decrementGrade()
 		throw Bureaucrat::GradeTooLowException();
 		return;
 	}
-	this->_grade++;
-	std::cout << this->_name << ": grade decremented" << std::endl;
+	std::cout << this->_name << ": grade decremented from " \
+		<< this->_grade++;
+	std::cout << " to " << this->_grade << std::endl;
 }
 
 const char*	Bureaucrat::GradeTooHighException::what(void) const throw()
 {
-	return "GradeTooHighException";
+	return "\033[31mBureaucrat: GradeTooHighException\033[0m";
 }
 
 const char*	Bureaucrat::GradeTooLowException::what(void) const throw()
 {
-	return "GradeTooLowException";
+	return "\033[31mBureaucrat: GradeTooLowException\033[0m";
 }
 
 std::ostream&	operator<<(std::ostream& lhs, const Bureaucrat & rhs)
