@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:43:29 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/25 15:35:59 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:54:33 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,8 @@ public:
 	};
 
 private:
-	static const int	_SIGN_GRADE = 145;
-	static const int	_EXEC_GRADE = 137;
-
 	const std::string	_target;
+
 };
 
 #endif

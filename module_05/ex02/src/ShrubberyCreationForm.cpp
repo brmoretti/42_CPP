@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:43:57 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/25 15:32:34 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/25 16:33:47 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void ShrubberyCreationForm::execute(Bureaucrat &bureaucrat) const
 		throw AForm::FormNotSignedException();
 	}
 
-	if (bureaucrat.getGrade() > this->_EXEC_GRADE) {
+	if (bureaucrat.getGrade() > SHRUBBERY_EXEC_GRADE) {
 		throw AForm::GradeTooLowException();
 	}
 
