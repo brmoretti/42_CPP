@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:55:34 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/25 00:16:55 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:30:18 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 AForm::AForm() : _name("Another Non-sense Form"),
 				_signed(false),
 				_sign_req(150),
-				_exec_req(150),
-				_target("UNDEFINED")
+				_exec_req(150)
 {
 	std::cout << CYAN(this->_name << " constructor called") << std::endl;
 }
@@ -26,8 +25,7 @@ AForm::AForm(const std::string& name, const int& sign_req,
 	_name(name),
 	_signed(false),
 	_sign_req(sign_req),
-	_exec_req(exec_req),
-	_target("UNDEFINED")
+	_exec_req(exec_req)
 {
 	std::cout << CYAN(this->_name << " constructor called") << std::endl;
 	if (sign_req > this->_MIN_GRADE || exec_req > this->_MIN_GRADE) {
@@ -96,12 +94,17 @@ void		AForm::beSigned(const Bureaucrat& bureaucrat)
 
 const char*	AForm::GradeTooHighException::what(void) const throw()
 {
-	return "\033[31mForm: GradeTooHighException\033[0m";
+	return "\033[31mAForm: GradeTooHighException\033[0m";
 }
 
 const char*	AForm::GradeTooLowException::what(void) const throw()
 {
-	return "\033[31mForm: GradeTooLowException\033[0m";
+	return "\033[31mAForm: GradeTooLowException\033[0m";
+}
+
+const char*	AForm::FormNotSignedException::what(void) const throw()
+{
+	return "\033[31mAForm: FormNotSignedException\033[0m";
 }
 
 std::ostream&	operator<<(std::ostream& lhs, const AForm& rhs)

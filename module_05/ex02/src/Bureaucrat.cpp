@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 12:16:31 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/24 18:35:35 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:47:28 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,9 @@ Bureaucrat::Bureaucrat(const std::string & name, const int & grade) :
 	std::cout << MAGENTA(this->_name << " constructor called") << std::endl;
 	if (grade < this->_MAX_GRADE) {
 		throw Bureaucrat::GradeTooHighException();
-		return;
 	}
 	if (grade > this->_MIN_GRADE) {
 		throw Bureaucrat::GradeTooLowException();
-		return;
 	}
 	this->_grade = grade;
 }
@@ -69,7 +67,6 @@ void		Bureaucrat::incrementGrade()
 {
 	if (this->_grade -1 < this->_MAX_GRADE) {
 		throw Bureaucrat::GradeTooHighException();
-		return;
 	}
 	std::cout << this->_name << ": grade incremented from " \
 		<< this->_grade--;
@@ -80,14 +77,13 @@ void		Bureaucrat::decrementGrade()
 {
 	if (this->_grade + 1 > this->_MIN_GRADE) {
 		throw Bureaucrat::GradeTooLowException();
-		return;
 	}
 	std::cout << this->_name << ": grade decremented from " \
 		<< this->_grade++;
 	std::cout << " to " << this->_grade << std::endl;
 }
 
-void		Bureaucrat::signForm(Form& form)
+void		Bureaucrat::signForm(AForm& form)
 {
 	if (form.isSigned()) {
 		std::cout << MAGENTA(form.getName() << " is already signed") \
@@ -97,8 +93,8 @@ void		Bureaucrat::signForm(Form& form)
 	try {
 		form.beSigned(*this);
 	}
-	catch (Form::GradeTooLowException &e) {
-		std::cout << MAGENTA(this->_name << " couldn’t sign \"" \
+	catch (AForm::GradeTooLowException &e) {
+		std::cout << MAGENTA(this->_name << " can’t sign \"" \
 			<< form.getName() << "\" because its grade is " \
 			<< this->_grade << " which is lower than " \
 			<< form.getSignReq() << " required") \
@@ -107,6 +103,37 @@ void		Bureaucrat::signForm(Form& form)
 	}
 	std::cout << MAGENTA(this->_name << " signed " << form.getName()) \
 		<< std::endl;
+}
+
+#include "ShrubberyCreationForm.hpp"
+
+void		Bureaucrat::executeForm(AForm const& form)
+{
+	try {
+		form.execute(*this);
+		std::cout << MAGENTA(this->_name << " executed " << form.getName()) \
+			<< std::endl;
+	}
+	catch (AForm::FormNotSignedException &e) {
+		std::cout << MAGENTA(this->_name << " can't execute the "
+			<< form.getName() << " because it is not signed yet") \
+			<< std::endl;
+	}
+	catch (AForm::GradeTooLowException &e) {
+		std::cout << MAGENTA(this->_name << " can't execute the "
+			<< form.getName() << " because it requires a higher grade") \
+			<< std::endl;
+	}
+	catch (ShrubberyCreationForm::FileAlreadyExistException &e) {
+		std::cout << MAGENTA(this->_name << " can't execute the "
+			<< form.getName() << " because the target already exists") \
+			<< std::endl;
+	}
+	catch (ShrubberyCreationForm::FailedToOpenException &e) {
+		std::cout << MAGENTA(this->_name << " can't execute the "
+			<< form.getName() << " because it failed to open the target") \
+			<< std::endl;
+	}
 }
 
 const char*	Bureaucrat::GradeTooHighException::what(void) const throw()

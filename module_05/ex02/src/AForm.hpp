@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:55:22 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/25 00:22:51 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:29:00 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,12 @@ public:
 	};
 
 	class GradeTooLowException : public std::exception
+	{
+		public:
+			virtual const char* what(void) const throw();
+	};
+
+	class FormNotSignedException : public std::exception
 	{
 		public:
 			virtual const char* what(void) const throw();

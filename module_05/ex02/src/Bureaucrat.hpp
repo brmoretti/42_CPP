@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 12:16:25 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/24 18:04:10 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:14:10 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@
 # define MAGENTA(text) "\033[35m" << text << "\033[0m"
 # define RED(text) "\033[31m" << text << "\033[0m"
 
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
+class AForm;
+class ShrubberyCreationForm;
 
 class Bureaucrat
 {
@@ -42,7 +43,8 @@ public:
 	void				incrementGrade();
 	void				decrementGrade();
 
-	void				signForm(Form& form);
+	void				signForm(AForm& form);
+	void				executeForm(AForm const& form);
 
 	class GradeTooHighException : public std::exception
 	{
