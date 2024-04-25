@@ -1,56 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:55:34 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/24 22:29:16 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/25 00:16:55 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-Form::Form() : _name("Another Non-sense Form"),
+AForm::AForm() : _name("Another Non-sense Form"),
 				_signed(false),
 				_sign_req(150),
-				_exec_req(150)
+				_exec_req(150),
+				_target("UNDEFINED")
 {
 	std::cout << CYAN(this->_name << " constructor called") << std::endl;
 }
 
-Form::Form(const std::string& name, const int& sign_req,
+AForm::AForm(const std::string& name, const int& sign_req,
 	const int& exec_req) :
 	_name(name),
 	_signed(false),
 	_sign_req(sign_req),
-	_exec_req(exec_req)
+	_exec_req(exec_req),
+	_target("UNDEFINED")
 {
 	std::cout << CYAN(this->_name << " constructor called") << std::endl;
 	if (sign_req > this->_MIN_GRADE || exec_req > this->_MIN_GRADE) {
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 		return;
 	}
 	if (sign_req < this->_MAX_GRADE || exec_req < this->_MAX_GRADE) {
-		throw Form::GradeTooHighException();
+		throw AForm::GradeTooHighException();
 		return;
 	}
 }
 
-Form::~Form()
+AForm::~AForm()
 {
 	std::cout << CYAN(this->_name << " destructor called") << std::endl;
 }
 
-Form::Form(const Form& rhs) : _sign_req(150), _exec_req(150)
+AForm::AForm(const AForm& rhs) : _sign_req(150), _exec_req(150)
 {
 	std::cout << CYAN(this->_name << " copy constructor called") \
 		<< std::endl;
 	*this = rhs;
 }
 
-Form&	Form::operator=(const Form& rhs)
+AForm&	AForm::operator=(const AForm& rhs)
 {
 	std::cout << CYAN(this->_name << " '=' overload called") \
 		<< std::endl;
@@ -63,46 +65,46 @@ Form&	Form::operator=(const Form& rhs)
 	return *this;
 }
 
-std::string	Form::getName() const
+std::string	AForm::getName() const
 {
 	return this->_name;
 }
 
-bool		Form::isSigned() const
+bool		AForm::isSigned() const
 {
 	return this->_signed;
 }
 
-int			Form::getSignReq() const
+int			AForm::getSignReq() const
 {
 	return this->_sign_req;
 }
 
-int			Form::getExecReq() const
+int			AForm::getExecReq() const
 {
 	return this->_exec_req;
 }
 
-void		Form::beSigned(const Bureaucrat& bureaucrat)
+void		AForm::beSigned(const Bureaucrat& bureaucrat)
 {
 	if (bureaucrat.getGrade() > this->_sign_req) {
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 		return;
 	}
 	this->_signed = true;
 }
 
-const char*	Form::GradeTooHighException::what(void) const throw()
+const char*	AForm::GradeTooHighException::what(void) const throw()
 {
 	return "\033[31mForm: GradeTooHighException\033[0m";
 }
 
-const char*	Form::GradeTooLowException::what(void) const throw()
+const char*	AForm::GradeTooLowException::what(void) const throw()
 {
 	return "\033[31mForm: GradeTooLowException\033[0m";
 }
 
-std::ostream&	operator<<(std::ostream& lhs, const Form& rhs)
+std::ostream&	operator<<(std::ostream& lhs, const AForm& rhs)
 {
 	lhs << GREEN(rhs.getName()) << WHITE(", required grade to sign ") \
 		<< GREEN(rhs.getSignReq()) << WHITE(" , required grade to execute ") \
