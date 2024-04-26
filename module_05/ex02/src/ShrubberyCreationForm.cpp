@@ -6,21 +6,25 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:43:57 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/25 16:33:47 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/26 16:45:45 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm() :
-	AForm("Shruberry", SHRUBBERY_SIGN_GRADE, SHRUBBERY_EXEC_GRADE),
+	AForm("Shruberry Creation Form",
+		SHRUBBERY_SIGN_GRADE,
+		SHRUBBERY_EXEC_GRADE),
 	_target("UNDEFINED")
 {
 	std::cout << YELLOW(getName() << " constructor called") << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string & target) :
-	AForm("Shruberry", SHRUBBERY_SIGN_GRADE, SHRUBBERY_EXEC_GRADE),
+	AForm("Shruberry Creation Form",
+		SHRUBBERY_SIGN_GRADE,
+		SHRUBBERY_EXEC_GRADE),
 	_target(target)
 {
 	std::cout << YELLOW(getName() << " constructor called") << std::endl;
@@ -31,8 +35,11 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	std::cout << YELLOW(getName() << " destructor called") << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& rhs) :
-	AForm("Shruberry", SHRUBBERY_SIGN_GRADE, SHRUBBERY_EXEC_GRADE)
+ShrubberyCreationForm::ShrubberyCreationForm(
+	const ShrubberyCreationForm& rhs) :
+	AForm("Shruberry Creation Form",
+		SHRUBBERY_SIGN_GRADE,
+		SHRUBBERY_EXEC_GRADE)
 {
 	std::cout << YELLOW(this->getName() << " copy constructor called") \
 		<< std::endl;
@@ -42,6 +49,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& rhs) :
 ShrubberyCreationForm&
 	ShrubberyCreationForm::operator=(const ShrubberyCreationForm& rhs)
 {
+	std::cout << YELLOW(this->getName() << " '=' overload called") \
+		<< std::endl;
 	if (this != &rhs) {
 		AForm::operator=(rhs);
 		(std::string &)this->_target = rhs._target;
@@ -69,6 +78,7 @@ void ShrubberyCreationForm::execute(Bureaucrat &bureaucrat) const
 	if (!out) {
 		throw ShrubberyCreationForm::FailedToOpenException();
 	}
+
 	out << ASCII_TREES << std::endl;
 }
 

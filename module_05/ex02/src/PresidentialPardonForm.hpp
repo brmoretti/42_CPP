@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:43:29 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/26 16:19:08 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/26 16:09:07 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOTOMYREQUESTFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
-# define BROWN(text) "\033[33m" << text << "\033[0m"
+# define BLUE(text) "\033[34m" << text << "\033[0m"
 
 # include "AForm.hpp"
-# include <cstdlib>
 
-# define ROBOTOMY_SIGN_GRADE 72
-# define ROBOTOMY_EXEC_GRADE 45
+# define PRESIDENTIAL_SIGN_GRADE 25
+# define PRESIDENTIAL_EXEC_GRADE 5
 
-class RobotomyRequestForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 public:
-	RobotomyRequestForm();
-	RobotomyRequestForm(const std::string & target);
-	~RobotomyRequestForm();
-	RobotomyRequestForm(const RobotomyRequestForm& rhs);
-	RobotomyRequestForm&	operator=(const RobotomyRequestForm& rhs);
+	PresidentialPardonForm();
+	PresidentialPardonForm(const std::string & target);
+	~PresidentialPardonForm();
+	PresidentialPardonForm(const PresidentialPardonForm& rhs);
+	PresidentialPardonForm&	operator=(const PresidentialPardonForm& rhs);
 
 	void	execute(Bureaucrat &bureaucrat) const;
 
