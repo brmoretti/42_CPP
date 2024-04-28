@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 15:01:01 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/27 17:24:00 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/27 23:33:46 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	Intern();
 	~Intern();
 	Intern(const Intern & rhs);
-	Intern& operator=(const Intern & rhs);
+	Intern&	operator=(const Intern & rhs);
 
 	AForm*	makeForm(const std::string & form, const std::string & target);
 
