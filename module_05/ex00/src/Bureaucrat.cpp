@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 12:16:31 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/25 15:45:48 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/29 11:58:32 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ Bureaucrat::Bureaucrat(const std::string & name, const int & grade) :
 	std::cout << MAGENTA(this->_name << " constructor called") << std::endl;
 	if (grade < this->_MAX_GRADE) {
 		throw Bureaucrat::GradeTooHighException();
+	}
 	if (grade > this->_MIN_GRADE) {
 		throw Bureaucrat::GradeTooLowException();
 	}
