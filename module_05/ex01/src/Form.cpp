@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 17:55:34 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/24 22:29:16 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:05:57 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,9 @@ Form::Form(const std::string& name, const int& sign_req,
 	std::cout << CYAN(this->_name << " constructor called") << std::endl;
 	if (sign_req > this->_MIN_GRADE || exec_req > this->_MIN_GRADE) {
 		throw Form::GradeTooLowException();
-		return;
 	}
 	if (sign_req < this->_MAX_GRADE || exec_req < this->_MAX_GRADE) {
 		throw Form::GradeTooHighException();
-		return;
 	}
 }
 
@@ -87,7 +85,6 @@ void		Form::beSigned(const Bureaucrat& bureaucrat)
 {
 	if (bureaucrat.getGrade() > this->_sign_req) {
 		throw Form::GradeTooLowException();
-		return;
 	}
 	this->_signed = true;
 }

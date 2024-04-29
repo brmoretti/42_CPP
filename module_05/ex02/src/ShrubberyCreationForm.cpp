@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 19:43:57 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/26 16:45:45 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:04:47 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void ShrubberyCreationForm::execute(Bureaucrat &bureaucrat) const
 		throw AForm::GradeTooLowException();
 	}
 
-	const std::string fl_name = this->_target + "_shruberry";
+	const std::string fl_name = this->_target + "_shrubberry";
 
 	if (std::ifstream(fl_name.c_str())) {
 		throw ShrubberyCreationForm::FileAlreadyExistException();
