@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 23:08:47 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/28 23:31:36 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/30 11:20:27 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
 	Base*	base;
 
 	std::srand(std::time(NULL));
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 5; i++) {
 		base = generate();
 		std::cout << "Pointer:\t";
 		identify(base);
@@ -34,5 +34,6 @@ int main()
 		std::cout << std::endl;
 		delete base;
 	}
+
 	return 0;
 }

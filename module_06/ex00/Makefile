@@ -16,7 +16,7 @@ VALGRIND	=	valgrind 				\
 				--show-leak-kinds=all	\
 				--trace-children=no		\
 				--track-fds=no
-ARGS		=
+ARGS		=	42
 
 all: $(NAME)
 

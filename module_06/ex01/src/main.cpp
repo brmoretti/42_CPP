@@ -6,13 +6,14 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 18:51:04 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/28 19:03:36 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/04/30 11:08:23 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
 
 #include <iostream>
+#include <bitset>
 
 int	main(void)
 {
@@ -33,7 +34,8 @@ int	main(void)
 	perhaps_bart = Serializer::deserialize(ptr);
 
 	std::cout \
-		<< "Name: " << perhaps_bart->name \
+		<< "Deserialized:"
+		<< "\nName: " << perhaps_bart->name \
 		<< "\nAge: " << perhaps_bart->age \
 		<< "\nSex: " << perhaps_bart->sex \
 		<< "\nHeight: " << perhaps_bart->height \
@@ -43,5 +45,4 @@ int	main(void)
 	delete perhaps_bart;
 
 	return 0;
-
 }
