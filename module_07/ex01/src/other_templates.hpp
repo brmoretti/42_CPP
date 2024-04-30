@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   other_templates.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 23:26:58 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/04/30 12:18:09 by bmoretti         ###   ########.fr       */
+/*   Created: 2024/04/30 16:29:11 by bmoretti          #+#    #+#             */
+/*   Updated: 2024/04/30 17:45:32 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-# define SCALARCONVERTER_HPP
-
 #include <iostream>
-#include <string>
-#include <cstdlib>
-#include <cmath>
-#include <climits>
 
-class ScalarConverter
+template <typename T>
+void	add_one(T& x)
 {
-public:
-	~ScalarConverter();
-	static void	convert(const std::string& literal);
+	std::cout << "add_one called" << std::endl;
+	x += 1;
+}
 
-private:
-	ScalarConverter();
-	ScalarConverter(const ScalarConverter & rhs);
-	ScalarConverter&	operator=(const ScalarConverter & rhs);
+template <typename T>
+void	print(const T & x)
+{
+	std::cout << "print called" << std::endl;
+	std::cout << x << std::endl;
+}
 
-};
-
-#endif
+template <typename T>
+void	print_squared(const T & x)
+{
+	std::cout << "print_squared called" << std::endl;
+	std::cout << x * x << std::endl;
+}
