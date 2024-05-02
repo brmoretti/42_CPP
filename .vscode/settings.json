@@ -52,6 +52,7 @@
 		"fstream": "cpp",
 		"optional": "cpp",
 		"ranges": "cpp",
-		"bitset": "c"
+		"bitset": "c",
+		"list": "cpp"
 	}
 }
