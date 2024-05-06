@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 13:44:42 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/05/02 16:34:23 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/05/06 19:32:52 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <cmath>
 #include <exception>
 #include <vector>
+#include <algorithm>
 
 class Span
 {
@@ -31,7 +32,7 @@ public:
 
 	const unsigned int &	getSize() const;
 
-	class OneMemberException : public std::exception
+	class NotEnoughMembersException : public std::exception
 	{
 	public:
 		virtual const char* what(void) const throw();
@@ -47,9 +48,6 @@ private:
 	const unsigned int	_size;
 	unsigned int		_n_elements;
 	std::vector<int>	_vec;
-	int					_min;
-	int					_max;
-	int					_shortest_span;
 
 };
 

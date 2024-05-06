@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 12:25:59 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/05/02 13:25:33 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/05/06 18:55:11 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	main(void)
 	returned = easyfind< std::list<int> >(lst, test);
 	std::cout << "Returned: " << returned << std::endl;
 
-	test = 1990;
+	test = 168;
 	std::cout << "\ntest 3: find " << test << std::endl;
 	returned = easyfind< std::list<int> >(lst, test);
 	std::cout << "Returned: " << returned << std::endl;
