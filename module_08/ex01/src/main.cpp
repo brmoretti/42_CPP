@@ -6,15 +6,13 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 16:29:19 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/05/06 19:53:16 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/05/07 13:23:54 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Span.hpp"
 
-#include <cstdlib> // for rand() function
-#include <climits> // for INT_MIN and INT_MAX constants
+#include <climits>
 
 static void	print_spans(Span& span)
 {
@@ -56,17 +54,7 @@ int main(void)
 	{
 		Span	sp = Span(100);
 
-		for (int i = 0; i < 1000; i++) {
-			int randomNumber = rand() % 100000 - 100000 / 2;
-			try{
-				sp.addNumber(randomNumber);
-			}
-			catch (Span::SpanIsFullException &e)
-			{
-				std::cerr << "Exception Caught: " << e.what() << std::endl;
-				break;
-			}
-		}
+		sp.addRandomNumbers(1000, 1000000);
 		print_spans(sp);
 	}
 
@@ -90,10 +78,7 @@ int main(void)
 	{
 		Span	sp = Span(1000000);
 
-		for (int i = 0; i < 1000000; i++) {
-			int randomNumber = rand();
-			sp.addNumber(randomNumber);
-		}
+		sp.addRandomNumbers(1000000, INT_MAX);
 		print_spans(sp);
 	}
 

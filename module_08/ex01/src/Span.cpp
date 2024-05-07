@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 14:22:30 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/05/06 19:42:16 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/05/07 13:22:55 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,21 @@ int		Span::longestSpan()
 	return this->_vec[_n_elements - 1] - this->_vec[0];
 }
 
-const unsigned int &	Span::getSize() const
+void	Span::addRandomNumbers(int n, int max)
 {
-	return this->_size;
+	if (n <= 0 || max < 0) {
+		return;
+	}
+	for (int i = 0; i < n; i++) {
+		int random_number = rand() % max;
+		try{
+			this->addNumber(random_number);
+		}
+		catch (Span::SpanIsFullException &e) {
+			std::cerr << "Exception Caught: " << e.what() << std::endl;
+			break;
+		}
+	}
 }
 
 const char* Span::NotEnoughMembersException::what(void) const throw()

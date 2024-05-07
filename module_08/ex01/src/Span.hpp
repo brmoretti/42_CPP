@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 13:44:42 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/05/06 19:32:52 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/05/07 13:23:48 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <exception>
 #include <vector>
 #include <algorithm>
+#include <iostream>
+#include <cstdlib>
 
 class Span
 {
@@ -30,7 +32,7 @@ public:
 	int		shortestSpan();
 	int		longestSpan();
 
-	const unsigned int &	getSize() const;
+	void	addRandomNumbers(int n, int max);
 
 	class NotEnoughMembersException : public std::exception
 	{
