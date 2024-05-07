@@ -53,6 +53,8 @@
 		"optional": "cpp",
 		"ranges": "cpp",
 		"bitset": "c",
-		"list": "cpp"
+		"list": "cpp",
+		"map": "cpp",
+		"set": "cpp"
 	}
 }
