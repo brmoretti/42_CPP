@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Database.hpp                                       :+:      :+:    :+:   */
+/*   Prices.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 15:49:52 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/05/07 17:07:16 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/05/08 17:39:32 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATABASE_HPP
-# define DATABASE_HPP
+#ifndef PRICES_HPP
+# define PRICES_HPP
 
 # include <string>
 # include <map>
@@ -19,21 +19,22 @@
 # include <exception>
 # include <sstream>
 
-class Database
+# include <iostream>
+
+class Prices
 {
 public:
-	Database(std::string& file_path, char sep);
-	~Database();
-	Database(const Database& rhs);
-	Database&	operator=(const Database& rhs);
+	Prices(const char * file_path, char sep);
+	~Prices();
+	Prices(const Prices& rhs);
+	Prices&		operator=(const Prices& rhs);
+
+	const double &	operator[](const char * date) const;
 
 private:
-	Database();
+	Prices();
 
-	std::string						_path;
-	char							_sep;
 	std::map< std::string, double >	_map;
-
 };
 
 #endif

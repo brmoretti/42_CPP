@@ -15,8 +15,8 @@ VALGRIND	=	valgrind 				\
 				--leak-check=full		\
 				--show-leak-kinds=all	\
 				--trace-children=no		\
-				--track-fds=no
-ARGS		=
+				--track-fds=yes
+ARGS		=	input.txt
 
 all: $(NAME)
 
