@@ -55,6 +55,7 @@
 		"bitset": "c",
 		"list": "cpp",
 		"map": "cpp",
-		"set": "cpp"
+		"set": "cpp",
+		"*.tpp": "cpp"
 	}
 }

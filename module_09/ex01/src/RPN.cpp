@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 13:13:46 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/05/09 17:20:15 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:25:29 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,13 +97,13 @@ bool	RPN::isValidExpression(const std::string & expression) const
 
 void	RPN::operations(const size_t pos)
 {
-	int	a, b;
+	if (this->_stack.size() == 1) {
+		this->_stack.push(0);
+	}
 
-	if (this.)
-
-	a = this->_stack.top();
+	int a = this->_stack.top();
 	this->_stack.pop();
-	b = this->_stack.top();
+	int b = this->_stack.top();
 	this->_stack.pop();
 
 	switch(pos) {
