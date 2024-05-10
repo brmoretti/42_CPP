@@ -15,8 +15,8 @@ VALGRIND	=	valgrind 				\
 				--leak-check=full		\
 				--show-leak-kinds=all	\
 				--trace-children=no		\
-				--track-fds=yes
-ARGS		=	"8 9 * 9 - 9 - 9 - 4 - 1 +"
+				--track-fds=no
+ARGS		=
 
 all: $(NAME)
 
