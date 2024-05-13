@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 18:50:43 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/05/13 18:42:45 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:37:00 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <vector>
 # include <algorithm>
-# include <iostream>
+
 class PmergeMe
 {
 public:
@@ -39,14 +39,13 @@ private:
 	void	sortPairs();
 	void	sortPairsBySecondElement();
 	void	createMainSequence();
-	size_t	stepBinary(size_t min, size_t max);
 	void	mergePend();
 
 };
 
-template <typename Pair>
-bool compareSecondElement(const Pair& pair1, const Pair& pair2) {
-	return pair1[1] < pair2[1];
-}
+// template <typename Pair>
+// bool compareSecondElement(const Pair& pair1, const Pair& pair2) {
+// 	return pair1[1] < pair2[1];
+// }
 
 #endif

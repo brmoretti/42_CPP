@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 14:34:04 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/05/13 18:15:34 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/05/13 11:28:43 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,6 @@ int	main(void)
 	fj.addElement(17);
 	fj.addElement(10);
 	fj.addElement(0);
-	fj.addElement(5);
-	fj.addElement(7);
-	fj.addElement(6);
-	fj.addElement(9);
-	fj.addElement(8);
-	fj.addElement(11);
-	fj.addElement(12);
 	fj.sortFordJohnson();
 
 	return (0);
