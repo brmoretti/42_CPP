@@ -6,7 +6,7 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 18:50:43 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/05/10 18:27:04 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:29:55 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,22 @@ public:
 	void		sortFordJohnson();
 
 private:
-	v_vectors	pairs;
+	v_vectors			_pairs;
+	int					_alone;
+	std::vector<int>	_main;
+	size_t				*_jacobsthal_seq;
 
+	void	generateJacobsthalSequence(const size_t & size);
 	void	sortPairs();
 	void	sortPairsBySecondElement();
-	void	_mergeSortRecursevely();
+	void	createMainSequence();
+	void	mergePend();
 
 };
+
+template <typename Pair>
+bool compareSecondElement(const Pair& pair1, const Pair& pair2) {
+	return pair1[1] < pair2[1];
+}
 
 #endif
