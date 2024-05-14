@@ -6,31 +6,47 @@
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 14:34:04 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/05/13 18:15:34 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/05/14 15:27:44 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-int	main(void)
+int	main(int argc, char *argv[])
 {
-	PmergeMe	fj; // Remove the parentheses after "PmergeMe fj" to declare an object instead of a function pointer.
+	std::vector<int>	inputs;
 
-	fj.addElement(4);
-	fj.addElement(1);
-	fj.addElement(3);
-	fj.addElement(2);
-	fj.addElement(17);
-	fj.addElement(10);
-	fj.addElement(0);
-	fj.addElement(5);
-	fj.addElement(7);
-	fj.addElement(6);
-	fj.addElement(9);
-	fj.addElement(8);
-	fj.addElement(11);
-	fj.addElement(12);
+	if (argc > 1) {
+		for (int i = 1; i < argc; i++) {
+			int	j;
+			j = std::atoi(argv[i]);
+			if (j < 0) {
+				std::cout << "Error" << std::endl;
+				return 0;
+			}
+			inputs.push_back(j);
+		}
+	} else {
+		return 0;
+	}
+
+	std::sort(inputs.begin(), inputs.end());
+	std::vector<int>::iterator it = std::unique(inputs.begin(), inputs.end());
+	if (it != inputs.end()) {
+		std::cout << "Error: Duplicate values in inputs vector" << std::endl;
+		return 0;
+	}
+
+	PmergeMe		fj;
+
+	std::cout << "Before: ";
+
+
+
+
+
 	fj.sortFordJohnson();
+
 
 	return (0);
 }
