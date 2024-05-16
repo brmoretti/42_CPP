@@ -5,48 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/10 14:34:04 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/05/14 15:27:44 by bmoretti         ###   ########.fr       */
+/*   Created: 2024/05/10 12:32:02 by bmoretti          #+#    #+#             */
+/*   Updated: 2024/05/16 13:46:30 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PmergeMe.hpp"
+#include "PMergeMe.hpp"
 
-int	main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	std::vector<int>	inputs;
-
-	if (argc > 1) {
-		for (int i = 1; i < argc; i++) {
-			int	j;
-			j = std::atoi(argv[i]);
-			if (j < 0) {
-				std::cout << "Error" << std::endl;
-				return 0;
-			}
-			inputs.push_back(j);
-		}
-	} else {
-		return 0;
+	if (argc == 1)
+	{
+		std::cerr << RED("Invalid arguments.\n");
+		std::cerr << GREEN("Usage: ./PMergeMe [parameters]\n");
+		return (1);
 	}
 
-	std::sort(inputs.begin(), inputs.end());
-	std::vector<int>::iterator it = std::unique(inputs.begin(), inputs.end());
-	if (it != inputs.end()) {
-		std::cout << "Error: Duplicate values in inputs vector" << std::endl;
-		return 0;
+	PMergeMe	merge;
+	try
+	{
+		merge.FordJohnson(argc, argv);
 	}
-
-	PmergeMe		fj;
-
-	std::cout << "Before: ";
-
-
-
-
-
-	fj.sortFordJohnson();
-
-
+	catch(const std::exception &e)
+	{
+		std::cerr << RED(e.what()) << std::endl;
+	}
 	return (0);
 }
