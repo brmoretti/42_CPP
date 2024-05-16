@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Prices.cpp                                         :+:      :+:    :+:   */
+/*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 15:54:06 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/05/08 17:38:59 by bmoretti         ###   ########.fr       */
+/*   Created: 2024/05/16 15:07:53 by bmoretti          #+#    #+#             */
+/*   Updated: 2024/05/16 15:07:58 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Prices.hpp"
+#include "BitcoinExchange.hpp"
 
 void	trimSpaces(std::string& string);
 
-Prices::Prices(const char * file_path, char sep)
+BitcoinExchange::BitcoinExchange(const char * file_path, char sep)
 {
 	std::fstream	file;
 
@@ -38,16 +38,16 @@ Prices::Prices(const char * file_path, char sep)
 	}
 }
 
-Prices::~Prices()
+BitcoinExchange::~BitcoinExchange()
 {
 }
 
-Prices::Prices(const Prices& rhs)
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& rhs)
 {
 	*this = rhs;
 }
 
-Prices&	Prices::operator=(const Prices& rhs)
+BitcoinExchange&	BitcoinExchange::operator=(const BitcoinExchange& rhs)
 {
 	if (this != &rhs) {
 		this->_map = rhs._map;
@@ -55,7 +55,7 @@ Prices&	Prices::operator=(const Prices& rhs)
 	return *this;
 }
 
-const double &	Prices::operator[](const char * date) const
+const double &	BitcoinExchange::operator[](const char * date) const
 {
 	std::map<std::string, double>::const_iterator it = this->_map.upper_bound(date);
 	if (it == this->_map.begin()) {
@@ -65,7 +65,7 @@ const double &	Prices::operator[](const char * date) const
 	return it->second;
 }
 
-Prices::Prices()
+BitcoinExchange::BitcoinExchange()
 {
 
 }

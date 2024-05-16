@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Prices.hpp                                         :+:      :+:    :+:   */
+/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmoretti <bmoretti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 15:49:52 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/05/08 17:39:32 by bmoretti         ###   ########.fr       */
+/*   Updated: 2024/05/16 15:07:00 by bmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRICES_HPP
-# define PRICES_HPP
+#ifndef BITCOINEXCHANGE_HPP
+# define BITCOINEXCHANGE_HPP
 
 # include <string>
 # include <map>
@@ -21,18 +21,18 @@
 
 # include <iostream>
 
-class Prices
+class BitcoinExchange
 {
 public:
-	Prices(const char * file_path, char sep);
-	~Prices();
-	Prices(const Prices& rhs);
-	Prices&		operator=(const Prices& rhs);
+	BitcoinExchange(const char * file_path, char sep);
+	~BitcoinExchange();
+	BitcoinExchange(const BitcoinExchange& rhs);
+	BitcoinExchange&		operator=(const BitcoinExchange& rhs);
 
 	const double &	operator[](const char * date) const;
 
 private:
-	Prices();
+	BitcoinExchange();
 
 	std::map< std::string, double >	_map;
 };
