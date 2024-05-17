@@ -16,7 +16,7 @@ VALGRIND	=	valgrind 				\
 				--show-leak-kinds=all	\
 				--trace-children=no		\
 				--track-fds=no
-ARGS		=
+ARGS		=	`shuf -i 1-100000 -n 3000 | tr "\n" " "`
 
 all: $(NAME)
 
